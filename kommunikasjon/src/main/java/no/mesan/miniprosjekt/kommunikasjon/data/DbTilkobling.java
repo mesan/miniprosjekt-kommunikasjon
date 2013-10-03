@@ -6,6 +6,9 @@ import java.sql.SQLException;
 
 public class DbTilkobling {
 
+	public static final String CONNECTION_URL = "jdbc:sqlserver://192.168.22.35:1433;"
+			+ "databaseName=heckdole_prod;user=miniprosjekt;password=pass;";
+	
 	public Connection getConnection() {
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -16,9 +19,7 @@ public class DbTilkobling {
 		Connection connection = null;
 
 		try {
-			String connectionUrl = "jdbc:sqlserver://localhost:1433;"
-					+ "databaseName=heckdole_prod;user=miniprosjekt;password=pass;";
-			connection = DriverManager.getConnection(connectionUrl);
+			connection = DriverManager.getConnection(CONNECTION_URL);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
