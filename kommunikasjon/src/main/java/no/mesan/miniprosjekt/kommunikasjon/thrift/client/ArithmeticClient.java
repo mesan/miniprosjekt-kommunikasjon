@@ -1,6 +1,7 @@
 package no.mesan.miniprosjekt.kommunikasjon.thrift.client;
 
 import no.mesan.miniprosjekt.kommunikasjon.thrift.server.ArithmeticService;
+import no.mesan.miniprosjekt.kommunikasjon.thrift.server.AdditionService;
 
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
@@ -20,12 +21,21 @@ public class ArithmeticClient {
 
             ArithmeticService.Client client = new ArithmeticService.Client(protocol);
             transport.open();
-
+            
             long addResult = client.add(100, 200);
             System.out.println("Add result: " + addResult);
             long multiplyResult = client.multiply(20, 40);
             System.out.println("Multiply result: " + multiplyResult);
+            
+            transport.close();
+            
+            AdditionService.Client client2 = new AdditionService.Client(protocol);
+            transport.open();
 
+
+
+            System.out.println(client2.hent().getKj());
+            
             transport.close();
         } catch (TTransportException e) {
             e.printStackTrace();
