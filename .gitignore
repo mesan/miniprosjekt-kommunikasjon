@@ -1,9 +1,12 @@
+.classpath
+.project
+.metadata
+.settings
+
+
 *.class
 
 # Package Files #
 *.jar
 *.war
 *.ear
-
-.classpath
-.metadata
