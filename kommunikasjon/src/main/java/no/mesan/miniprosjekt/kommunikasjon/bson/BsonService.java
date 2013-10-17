@@ -16,11 +16,11 @@ import de.undercouch.bson4jackson.BsonFactory;
 import no.mesan.miniprosjekt.kommunikasjon.data.AircraftDao;
 import no.mesan.miniprosjekt.kommunikasjon.domain.Aircraft;
 
-@Path("bson")
+@Path("/bson")
 public class BsonService {
 
 	@GET
-	@Path("aircraft")
+	@Path("/aircraft")
 	public Response readAllAircrafts() throws JsonGenerationException, JsonMappingException, IOException{
 
 		AircraftDao ariAircraftDao = new AircraftDao();
