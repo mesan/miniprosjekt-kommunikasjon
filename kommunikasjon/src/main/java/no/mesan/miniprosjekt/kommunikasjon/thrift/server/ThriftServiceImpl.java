@@ -20,17 +20,12 @@ public class ThriftServiceImpl implements ThriftService.Iface {
 		OsDao osDao = new OsDao();
 		List<Os> oss = osDao.getOss();
 
-//		System.out.println("OS size: " + oss.size());
-//		System.out
-//				.println("OS 0 system size: " + oss.get(0).getSystem().length);
 		List<OsThrift> masseOs = new ArrayList<OsThrift>();
 		
 		for(Os os : oss) {
 			ByteBuffer bb = ByteBuffer.wrap(os.getSystem());
 			masseOs.add(new OsThrift(os.getName(), bb));
 		}
-		
-
 		return masseOs;
 	}
 
@@ -38,15 +33,12 @@ public class ThriftServiceImpl implements ThriftService.Iface {
 	public List<AviationDataThrift> getAviationData() throws TException {
 		AviationDataDao aviationDataDao = new AviationDataDao();
 		List<AviationData> aviationData = aviationDataDao.getAviationData();
-//
-//		System.out.println("Aviation data size: " + aviationData.size());
 
 		List<AviationDataThrift> masseAviationData = new ArrayList<AviationDataThrift>();
 		
 		for(AviationData ad : aviationData) {
 			masseAviationData.add(new AviationDataThrift(ad.getId(), ad.getAccidentNumber()));
 		}
-		
 		return masseAviationData;
 	}
 
@@ -54,10 +46,6 @@ public class ThriftServiceImpl implements ThriftService.Iface {
 	public List<AircraftThrift> getAircraft() throws TException {
 		AircraftDao aircraftDao = new AircraftDao();
 		List<Aircraft> aircrafts = aircraftDao.getAircrafts();
-//
-//		System.out.println("Aircrafts size: " + aircrafts.size());
-//		System.out.println("Aircraft 0 drawing size: "
-//				+ aircrafts.get(0).getDrawing().length);
 		
 		List<AircraftThrift> masseAircraft = new ArrayList<AircraftThrift>();
 		
@@ -65,7 +53,6 @@ public class ThriftServiceImpl implements ThriftService.Iface {
 			ByteBuffer bb = ByteBuffer.wrap(aircraft.getDrawing());
 			masseAircraft.add(new AircraftThrift(aircraft.getName(), bb));
 		}
-		
 		return masseAircraft;
 	}
 
