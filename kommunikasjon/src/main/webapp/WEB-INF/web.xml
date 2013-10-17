@@ -1,7 +1,6 @@
 <!DOCTYPE web-app PUBLIC
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
 	<servlet>
@@ -15,6 +14,10 @@
 			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
 			<param-value>true</param-value>
 		</init-param>
+		<init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>no.mesan.miniprosjekt.kommunikasjon.protobuf.CommunicationApplication</param-value>
+        </init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
@@ -22,4 +25,6 @@
 		<servlet-name>jersey-servlet</servlet-name>
 		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
+	
+	
 </web-app>
