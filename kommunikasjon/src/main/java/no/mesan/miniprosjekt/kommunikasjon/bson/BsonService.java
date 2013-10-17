@@ -26,7 +26,7 @@ public class BsonService{
 
 	@GET
 	@Path("aircraft")
-	@Produces({"application/bson"})
+	@Produces({"application/json"})
 	public Response readAllAircrafts() throws JsonGenerationException, JsonMappingException, IOException{
 
 		AircraftDao ariAircraftDao = new AircraftDao();
@@ -36,12 +36,12 @@ public class BsonService{
 		List<Aircraft> list = ariAircraftDao.getAircrafts();
 		mapper.writeValue(baos, list);
 		
-		return Response.ok(mapper).build();
+		return Response.ok(baos).build();
 	}
 
 	@GET
 	@Path("aviation")
-	@Produces({"application/bson"})
+	@Produces({"application/json"})
 	public Response readAllAviationData() throws JsonGenerationException, JsonMappingException, IOException{
 
 		AviationDataDao aviationDataDao = new AviationDataDao();
@@ -51,12 +51,12 @@ public class BsonService{
 		List<AviationData> list = aviationDataDao.getAviationData();
 		mapper.writeValue(baos, list);
 		
-		return Response.ok(mapper).build();
+		return Response.ok(baos).build();
 	}
 
 	@GET
 	@Path("os")
-	@Produces({"application/bson"})
+	@Produces({"application/json"})
 	public Response readAllOs() throws JsonGenerationException, JsonMappingException, IOException{
 
 		OsDao osDao = new OsDao();
@@ -66,6 +66,6 @@ public class BsonService{
 		List<Os> list = osDao.getOss();
 		mapper.writeValue(baos, list);
 		
-		return Response.ok(mapper).build();
+		return Response.ok(baos).build();
 	}
 }
