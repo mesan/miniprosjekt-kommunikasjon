@@ -43,7 +43,7 @@ class ListPeople {
 
     // Read the existing address book.
     AddressBook addressBook =
-      AddressBook.parseFrom(new FileInputStream(args[0]));
+  	      AddressBook.parseFrom(new FileInputStream(args[0]));
 
     Print(addressBook);
   }
