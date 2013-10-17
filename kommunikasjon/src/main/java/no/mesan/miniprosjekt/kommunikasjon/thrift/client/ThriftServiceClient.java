@@ -14,6 +14,7 @@ public class ThriftServiceClient {
 	public static void main(String[] args) {
 
 		try {
+			long startAll = System.currentTimeMillis();
 			long start = System.currentTimeMillis();
 			
 			TTransport transport;
@@ -25,24 +26,19 @@ public class ThriftServiceClient {
 			ThriftService.Client client = new ThriftService.Client(protocol);
 
 			List<OsThrift> os = client.getOs();
+			System.out.println("OS: " + (System.currentTimeMillis() - start) + "ms");
+			
+			start = System.currentTimeMillis();
 			List<AircraftThrift> aircrafts = client.getAircraft();
+			System.out.println("Aircrafts: " + (System.currentTimeMillis() - start) + "ms");
+			
+			start = System.currentTimeMillis();
 			List<AviationDataThrift> aviationData = client.getAviationData();
-
-			System.out.println("OS size: " + os.size());
-			System.out.println("OS 0 system size: "
-					+ os.get(0).getSystem().length);
-
-			System.out.println("Aircrafts size: " + aircrafts.size());
-			System.out.println("Aircraft 0 drawing size: "
-					+ aircrafts.get(0).getDrawing().length);
-
-			System.out.println("Aviation data size: " + aviationData.size());
-
-			long end = System.currentTimeMillis();
-			
-			System.out.println("Time in ms: " + (end - start));
-			
+			System.out.println("AviationData: " + (System.currentTimeMillis() - start) + "ms");
 			transport.close();
+			
+			long endAll = System.currentTimeMillis();
+			System.out.println("\nTotal: " + (endAll - startAll) + "ms");
 		} catch (TTransportException e) {
 			e.printStackTrace();
 		} catch (TException x) {
