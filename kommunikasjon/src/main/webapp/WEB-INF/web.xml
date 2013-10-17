@@ -14,10 +14,10 @@
 			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
 			<param-value>true</param-value>
 		</init-param>
-		<init-param>
+		<!--init-param>
             <param-name>javax.ws.rs.Application</param-name>
             <param-value>no.mesan.miniprosjekt.kommunikasjon.protobuf.CommunicationApplication</param-value>
-        </init-param>
+        </init-param-->
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
