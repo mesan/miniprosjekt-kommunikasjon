@@ -1,0 +1,15 @@
+// See README.txt for information and build instructions.
+
+package protobuf;
+
+option java_package = "no.mesan.miniprosjekt.kommunikasjon.protobuf";
+option java_outer_classname = "AircraftProto";
+
+message AircraftMessage {
+  required string name = 1;
+  required bytes drawing = 2;
+}
+
+message AircraftMessages{
+  repeated AircraftMessage aircraftmessage = 1;
+}
