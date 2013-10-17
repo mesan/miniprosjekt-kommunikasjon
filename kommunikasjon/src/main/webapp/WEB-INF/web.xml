@@ -14,7 +14,11 @@
 			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
 			<param-value>true</param-value>
 		</init-param>
+<<<<<<< HEAD
+		<!-- init-param>
+=======
 		<!--init-param>
+>>>>>>> 63edd625cd54f0dbfa12eb5c92a0a3185c61e095
             <param-name>javax.ws.rs.Application</param-name>
             <param-value>no.mesan.miniprosjekt.kommunikasjon.protobuf.CommunicationApplication</param-value>
         </init-param-->

@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
@@ -14,13 +15,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import de.undercouch.bson4jackson.BsonFactory;
 import no.mesan.miniprosjekt.kommunikasjon.data.AircraftDao;
+import no.mesan.miniprosjekt.kommunikasjon.data.AviationDataDao;
+import no.mesan.miniprosjekt.kommunikasjon.data.OsDao;
 import no.mesan.miniprosjekt.kommunikasjon.domain.Aircraft;
+import no.mesan.miniprosjekt.kommunikasjon.domain.AviationData;
+import no.mesan.miniprosjekt.kommunikasjon.domain.Os;
 
-@Path("/bson")
-public class BsonService {
+@Path("bson")
+public class BsonService{
 
 	@GET
-	@Path("/aircraft")
+	@Path("aircraft")
+	@Produces({"application/bson"})
 	public Response readAllAircrafts() throws JsonGenerationException, JsonMappingException, IOException{
 
 		AircraftDao ariAircraftDao = new AircraftDao();
@@ -34,15 +40,32 @@ public class BsonService {
 	}
 
 	@GET
-	@Path("/aviation")
-	public void readAllAviationData(){
+	@Path("aviation")
+	@Produces({"application/bson"})
+	public Response readAllAviationData() throws JsonGenerationException, JsonMappingException, IOException{
 
+		AviationDataDao aviationDataDao = new AviationDataDao();
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		ObjectMapper mapper = new ObjectMapper(new BsonFactory());
+		
+		List<AviationData> list = aviationDataDao.getAviationData();
+		mapper.writeValue(baos, list);
+		
+		return Response.ok(mapper).build();
 	}
 
 	@GET
-	@Path("/os")
-	public void readAllOs(){
+	@Path("os")
+	@Produces({"application/bson"})
+	public Response readAllOs() throws JsonGenerationException, JsonMappingException, IOException{
 
+		OsDao osDao = new OsDao();
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		ObjectMapper mapper = new ObjectMapper(new BsonFactory());
+		
+		List<Os> list = osDao.getOss();
+		mapper.writeValue(baos, list);
+		
+		return Response.ok(mapper).build();
 	}
-
 }
