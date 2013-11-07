@@ -1,5 +1,9 @@
 package no.mesan.miniprosjekt.kommunikasjon.thrift.client;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.List;
 
 import org.apache.thrift.TException;
@@ -15,16 +19,16 @@ public class ThriftServiceClient {
 
 		try {
 			long startAll = System.currentTimeMillis();
-			long start = System.currentTimeMillis();
 			
 			TTransport transport;
 
-			transport = new TSocket("localhost", 9090);
+			transport = new TSocket("192.168.22.30", 9090);
 			transport.open();
 
 			TProtocol protocol = new TBinaryProtocol(transport);
 			ThriftService.Client client = new ThriftService.Client(protocol);
 
+			long start = System.currentTimeMillis();
 			List<OsThrift> os = client.getOs();
 			System.out.println("OS: " + (System.currentTimeMillis() - start) + "ms");
 			

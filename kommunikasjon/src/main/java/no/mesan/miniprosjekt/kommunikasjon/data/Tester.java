@@ -14,7 +14,6 @@ public class Tester {
 
 		System.out.println("AviationData - tid (ms): " + (System.currentTimeMillis() - start));
 		start = System.currentTimeMillis();
-		System.out.println("Aviation data size: " + aviationData.size());
 
 		AircraftDao aircraftDao = new AircraftDao();
 		List<Aircraft> aircrafts = aircraftDao.getAircrafts();
@@ -22,17 +21,11 @@ public class Tester {
 
 		System.out.println("Aircrafts - tid (ms): " + (System.currentTimeMillis() - start));
 		start = System.currentTimeMillis();
-		System.out.println("Aircrafts size: " + aircrafts.size());
-		System.out.println("Aircraft 0 drawing size: "
-				+ aircrafts.get(0).getDrawing().length);
 
 		OsDao osDao = new OsDao();
 		List<Os> oss = osDao.getOss();
 		
 		System.out.println("OS - tid (ms): " + (System.currentTimeMillis() - start));
-		System.out.println("OS size: " + oss.size());
-		System.out
-				.println("OS 0 system size: " + oss.get(0).getSystem().length);
 		
 
 
