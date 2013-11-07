@@ -14,41 +14,46 @@ import org.msgpack.rpc.Client;
 import org.msgpack.rpc.loop.EventLoop;
 
 public class MsgPackClient {
-	private static RPCInterface iface;
 
 	public static interface RPCInterface {
 		String hello(String msg, int a, boolean test);
+
 		byte[] getAircrafts();
+
 		byte[] getOss();
+
 		byte[] getAviationData();
 	}
 
 	public static void main(String[] args) throws Exception {
 		EventLoop loop = EventLoop.defaultEventLoop();
 
-		Client cli = new Client("192.168.22.45", 1985, loop);
-		iface = cli.proxy(RPCInterface.class);
-
-//		getTestMessage();
+		Client cli = new Client("localhost", 1985, loop);
+		RPCInterface iface = cli.proxy(RPCInterface.class);
 		for (int i = 0; i < 10; i++) {
-			getAircrafts();
-			getAviationData();
+			getAircrafts(iface);
 		}
-//		getOss();
+		// getTestMessage();
+		// for (int i = 0; i < 10; i++) {
+		// getAircrafts(iface);
+		// getAviationData(iface);
+		// }
+		// getOss(iface);
 	}
 
-	private static void getAviationData() throws IOException {
+	private static void getAviationData(RPCInterface iface) throws IOException {
 		MessagePack msgpack = new MessagePack();
 
 		// Deserialize
 		System.out.println("AVIATIONDATA");
 		long start = System.currentTimeMillis();
-		AviationDataDto aviationDataDto = msgpack.read(iface.getAviationData(), AviationDataDto.class);
+		AviationDataDto aviationDataDto = msgpack.read(iface.getAviationData(),
+				AviationDataDto.class);
 		System.out.println("Time: " + (System.currentTimeMillis() - start));
-		System.out.println("size: " + aviationDataDto.getAviationData().size());		
+		System.out.println("size: " + aviationDataDto.getAviationData().size());
 	}
 
-	private static void getOss() throws IOException {
+	private static void getOss(RPCInterface iface) throws IOException {
 		MessagePack msgpack = new MessagePack();
 
 		// Deserialize
@@ -59,20 +64,24 @@ public class MsgPackClient {
 		System.out.println("size: " + osDto.getOss().size());
 	}
 
-	private static void getAircrafts() throws IOException {
+	private static void getAircrafts(RPCInterface iface) throws IOException {
 		MessagePack msgpack = new MessagePack();
 
 		// Deserialize
 		long start = System.currentTimeMillis();
 		System.out.println("AIRCRAFTS");
-		AircraftDto aircraftDto = msgpack.read(iface.getAircrafts(), AircraftDto.class);
+		byte[] arr = iface.getAircrafts();
 		System.out.println("Time: " + (System.currentTimeMillis() - start));
-		System.out.println("size: " + aircraftDto.getAircrafts().size());
+		long start2 = System.currentTimeMillis();
+		AircraftDto aircraftDto = msgpack.read(arr, AircraftDto.class);
+		System.out.println("Time2: " + (System.currentTimeMillis() - start2));
+		
+		//System.out.println("size: " + aircraftDto.getAircrafts().size());
 	}
 
-	private static void getTestMessage() {
-		String hello = iface.hello("hello", 1, true);
-		System.out.println("TEST");
-		System.out.println(hello);
-	}
+	// private static void getTestMessage() {
+	// String hello = iface.hello("hello", 1, true);
+	// System.out.println("TEST");
+	// System.out.println(hello);
+	// }
 }

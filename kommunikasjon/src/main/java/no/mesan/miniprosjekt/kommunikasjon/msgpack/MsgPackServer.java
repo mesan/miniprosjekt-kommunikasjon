@@ -26,11 +26,14 @@ public class MsgPackServer {
 	public byte[] getAircrafts() throws IOException {
 		AircraftDao aircraftDao = new AircraftDao();		
 		AircraftDto aircraftDto = new AircraftDto();
-		
 		aircraftDto.setAircrafts(aircraftDao.getAircrafts());
+
+		long start = System.currentTimeMillis();
 		MessagePack msgpack = new MessagePack();
+		byte[] bytes = msgpack.write(aircraftDto);
+		System.out.println("tid - server: " + (System.currentTimeMillis() - start));
 		
-		return msgpack.write(aircraftDto);
+		return bytes;
 	}
 	
 	public byte[] getAviationData() throws IOException {
