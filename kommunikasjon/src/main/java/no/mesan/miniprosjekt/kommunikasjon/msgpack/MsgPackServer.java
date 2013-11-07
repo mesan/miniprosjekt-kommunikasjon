@@ -5,10 +5,13 @@ import java.util.List;
 
 import no.mesan.miniprosjekt.kommunikasjon.data.AircraftDao;
 import no.mesan.miniprosjekt.kommunikasjon.domain.Aircraft;
+import no.mesan.miniprosjekt.kommunikasjon.domain.AircraftDto;
 
 import org.msgpack.MessagePack;
 import org.msgpack.rpc.Server;
 import org.msgpack.rpc.loop.EventLoop;
+import org.msgpack.template.Template;
+import org.msgpack.template.Templates;
 
 public class MsgPackServer {
 	public String hello(String msg, int a) {
@@ -17,14 +20,13 @@ public class MsgPackServer {
 	}
 	
 	public byte[] hentFly() throws IOException {
-		AircraftDao aircraftDao = new AircraftDao();
-		List<Aircraft> aircrafts = aircraftDao.getAircrafts();
+		AircraftDao aircraftDao = new AircraftDao();		
+		AircraftDto aircraftDto = new AircraftDto();
 		
-		Aircraft aircraft = aircrafts.get(0);
-		
+		aircraftDto.setAircrafts(aircraftDao.getAircrafts());
 		MessagePack msgpack = new MessagePack();
 		
-		return msgpack.write(aircraft);
+		return msgpack.write(aircraftDto);
 	}
 	
 	public static void main(String[] args) throws Exception {
