@@ -4,9 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import com.microsoft.sqlserver.jdbc.SQLServerDriver;
+
 public class DbTilkobling {
 
-	public static final String CONNECTION_URL = "jdbc:sqlserver://192.168.22.23:1433;"
+	public static final String CONNECTION_URL = "jdbc:sqlserver://192.168.22.45:1433;"
 			+ "databaseName=heckdole_prod;user=miniprosjekt;password=pass;";
 	
 	public Connection getConnection() {

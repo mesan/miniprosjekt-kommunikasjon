@@ -4,6 +4,7 @@ package protobuf;
 
 option java_package = "no.mesan.miniprosjekt.kommunikasjon.protobuf";
 option java_outer_classname = "AircraftProto";
+option optimize_for = SPEED;
 
 message AircraftMessage {
   required string name = 1;

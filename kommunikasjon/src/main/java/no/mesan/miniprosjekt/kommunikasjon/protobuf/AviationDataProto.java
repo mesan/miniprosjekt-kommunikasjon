@@ -651,11 +651,702 @@ public final class AviationDataProto {
     // @@protoc_insertion_point(class_scope:protobuf.AviationDataMessage)
   }
 
+  public interface AviationDatasMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // repeated .protobuf.AviationDataMessage aviationdatamessage = 1;
+    /**
+     * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+     */
+    java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage> 
+        getAviationdatamessageList();
+    /**
+     * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+     */
+    no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage getAviationdatamessage(int index);
+    /**
+     * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+     */
+    int getAviationdatamessageCount();
+    /**
+     * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+     */
+    java.util.List<? extends no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessageOrBuilder> 
+        getAviationdatamessageOrBuilderList();
+    /**
+     * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+     */
+    no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessageOrBuilder getAviationdatamessageOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code protobuf.AviationDatasMessage}
+   */
+  public static final class AviationDatasMessage extends
+      com.google.protobuf.GeneratedMessage
+      implements AviationDatasMessageOrBuilder {
+    // Use AviationDatasMessage.newBuilder() to construct.
+    private AviationDatasMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private AviationDatasMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final AviationDatasMessage defaultInstance;
+    public static AviationDatasMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public AviationDatasMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AviationDatasMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                aviationdatamessage_ = new java.util.ArrayList<no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              aviationdatamessage_.add(input.readMessage(no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          aviationdatamessage_ = java.util.Collections.unmodifiableList(aviationdatamessage_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.internal_static_protobuf_AviationDatasMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.internal_static_protobuf_AviationDatasMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage.class, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<AviationDatasMessage> PARSER =
+        new com.google.protobuf.AbstractParser<AviationDatasMessage>() {
+      public AviationDatasMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AviationDatasMessage(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AviationDatasMessage> getParserForType() {
+      return PARSER;
+    }
+
+    // repeated .protobuf.AviationDataMessage aviationdatamessage = 1;
+    public static final int AVIATIONDATAMESSAGE_FIELD_NUMBER = 1;
+    private java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage> aviationdatamessage_;
+    /**
+     * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+     */
+    public java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage> getAviationdatamessageList() {
+      return aviationdatamessage_;
+    }
+    /**
+     * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+     */
+    public java.util.List<? extends no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessageOrBuilder> 
+        getAviationdatamessageOrBuilderList() {
+      return aviationdatamessage_;
+    }
+    /**
+     * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+     */
+    public int getAviationdatamessageCount() {
+      return aviationdatamessage_.size();
+    }
+    /**
+     * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+     */
+    public no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage getAviationdatamessage(int index) {
+      return aviationdatamessage_.get(index);
+    }
+    /**
+     * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+     */
+    public no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessageOrBuilder getAviationdatamessageOrBuilder(
+        int index) {
+      return aviationdatamessage_.get(index);
+    }
+
+    private void initFields() {
+      aviationdatamessage_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      for (int i = 0; i < getAviationdatamessageCount(); i++) {
+        if (!getAviationdatamessage(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < aviationdatamessage_.size(); i++) {
+        output.writeMessage(1, aviationdatamessage_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < aviationdatamessage_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, aviationdatamessage_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code protobuf.AviationDatasMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.internal_static_protobuf_AviationDatasMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.internal_static_protobuf_AviationDatasMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage.class, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage.Builder.class);
+      }
+
+      // Construct using no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getAviationdatamessageFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        if (aviationdatamessageBuilder_ == null) {
+          aviationdatamessage_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          aviationdatamessageBuilder_.clear();
+        }
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.internal_static_protobuf_AviationDatasMessage_descriptor;
+      }
+
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage getDefaultInstanceForType() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage.getDefaultInstance();
+      }
+
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage build() {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage buildPartial() {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage result = new no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage(this);
+        int from_bitField0_ = bitField0_;
+        if (aviationdatamessageBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            aviationdatamessage_ = java.util.Collections.unmodifiableList(aviationdatamessage_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.aviationdatamessage_ = aviationdatamessage_;
+        } else {
+          result.aviationdatamessage_ = aviationdatamessageBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage) {
+          return mergeFrom((no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage other) {
+        if (other == no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage.getDefaultInstance()) return this;
+        if (aviationdatamessageBuilder_ == null) {
+          if (!other.aviationdatamessage_.isEmpty()) {
+            if (aviationdatamessage_.isEmpty()) {
+              aviationdatamessage_ = other.aviationdatamessage_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureAviationdatamessageIsMutable();
+              aviationdatamessage_.addAll(other.aviationdatamessage_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.aviationdatamessage_.isEmpty()) {
+            if (aviationdatamessageBuilder_.isEmpty()) {
+              aviationdatamessageBuilder_.dispose();
+              aviationdatamessageBuilder_ = null;
+              aviationdatamessage_ = other.aviationdatamessage_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              aviationdatamessageBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getAviationdatamessageFieldBuilder() : null;
+            } else {
+              aviationdatamessageBuilder_.addAllMessages(other.aviationdatamessage_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        for (int i = 0; i < getAviationdatamessageCount(); i++) {
+          if (!getAviationdatamessage(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // repeated .protobuf.AviationDataMessage aviationdatamessage = 1;
+      private java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage> aviationdatamessage_ =
+        java.util.Collections.emptyList();
+      private void ensureAviationdatamessageIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          aviationdatamessage_ = new java.util.ArrayList<no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage>(aviationdatamessage_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.Builder, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessageOrBuilder> aviationdatamessageBuilder_;
+
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage> getAviationdatamessageList() {
+        if (aviationdatamessageBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(aviationdatamessage_);
+        } else {
+          return aviationdatamessageBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public int getAviationdatamessageCount() {
+        if (aviationdatamessageBuilder_ == null) {
+          return aviationdatamessage_.size();
+        } else {
+          return aviationdatamessageBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage getAviationdatamessage(int index) {
+        if (aviationdatamessageBuilder_ == null) {
+          return aviationdatamessage_.get(index);
+        } else {
+          return aviationdatamessageBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public Builder setAviationdatamessage(
+          int index, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage value) {
+        if (aviationdatamessageBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAviationdatamessageIsMutable();
+          aviationdatamessage_.set(index, value);
+          onChanged();
+        } else {
+          aviationdatamessageBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public Builder setAviationdatamessage(
+          int index, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.Builder builderForValue) {
+        if (aviationdatamessageBuilder_ == null) {
+          ensureAviationdatamessageIsMutable();
+          aviationdatamessage_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          aviationdatamessageBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public Builder addAviationdatamessage(no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage value) {
+        if (aviationdatamessageBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAviationdatamessageIsMutable();
+          aviationdatamessage_.add(value);
+          onChanged();
+        } else {
+          aviationdatamessageBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public Builder addAviationdatamessage(
+          int index, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage value) {
+        if (aviationdatamessageBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAviationdatamessageIsMutable();
+          aviationdatamessage_.add(index, value);
+          onChanged();
+        } else {
+          aviationdatamessageBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public Builder addAviationdatamessage(
+          no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.Builder builderForValue) {
+        if (aviationdatamessageBuilder_ == null) {
+          ensureAviationdatamessageIsMutable();
+          aviationdatamessage_.add(builderForValue.build());
+          onChanged();
+        } else {
+          aviationdatamessageBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public Builder addAviationdatamessage(
+          int index, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.Builder builderForValue) {
+        if (aviationdatamessageBuilder_ == null) {
+          ensureAviationdatamessageIsMutable();
+          aviationdatamessage_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          aviationdatamessageBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public Builder addAllAviationdatamessage(
+          java.lang.Iterable<? extends no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage> values) {
+        if (aviationdatamessageBuilder_ == null) {
+          ensureAviationdatamessageIsMutable();
+          super.addAll(values, aviationdatamessage_);
+          onChanged();
+        } else {
+          aviationdatamessageBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public Builder clearAviationdatamessage() {
+        if (aviationdatamessageBuilder_ == null) {
+          aviationdatamessage_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          aviationdatamessageBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public Builder removeAviationdatamessage(int index) {
+        if (aviationdatamessageBuilder_ == null) {
+          ensureAviationdatamessageIsMutable();
+          aviationdatamessage_.remove(index);
+          onChanged();
+        } else {
+          aviationdatamessageBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.Builder getAviationdatamessageBuilder(
+          int index) {
+        return getAviationdatamessageFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessageOrBuilder getAviationdatamessageOrBuilder(
+          int index) {
+        if (aviationdatamessageBuilder_ == null) {
+          return aviationdatamessage_.get(index);  } else {
+          return aviationdatamessageBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public java.util.List<? extends no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessageOrBuilder> 
+           getAviationdatamessageOrBuilderList() {
+        if (aviationdatamessageBuilder_ != null) {
+          return aviationdatamessageBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(aviationdatamessage_);
+        }
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.Builder addAviationdatamessageBuilder() {
+        return getAviationdatamessageFieldBuilder().addBuilder(
+            no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.Builder addAviationdatamessageBuilder(
+          int index) {
+        return getAviationdatamessageFieldBuilder().addBuilder(
+            index, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .protobuf.AviationDataMessage aviationdatamessage = 1;</code>
+       */
+      public java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.Builder> 
+           getAviationdatamessageBuilderList() {
+        return getAviationdatamessageFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.Builder, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessageOrBuilder> 
+          getAviationdatamessageFieldBuilder() {
+        if (aviationdatamessageBuilder_ == null) {
+          aviationdatamessageBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage.Builder, no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessageOrBuilder>(
+                  aviationdatamessage_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          aviationdatamessage_ = null;
+        }
+        return aviationdatamessageBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:protobuf.AviationDatasMessage)
+    }
+
+    static {
+      defaultInstance = new AviationDatasMessage(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:protobuf.AviationDatasMessage)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_protobuf_AviationDataMessage_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_protobuf_AviationDataMessage_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_protobuf_AviationDatasMessage_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_protobuf_AviationDatasMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -667,8 +1358,11 @@ public final class AviationDataProto {
     java.lang.String[] descriptorData = {
       "\n\022aviationdata.proto\022\010protobuf\"9\n\023Aviati" +
       "onDataMessage\022\n\n\002id\030\001 \002(\t\022\026\n\016accidentnum" +
-      "ber\030\002 \002(\tBA\n,no.mesan.miniprosjekt.kommu" +
-      "nikasjon.protobufB\021AviationDataProto"
+      "ber\030\002 \002(\t\"R\n\024AviationDatasMessage\022:\n\023avi" +
+      "ationdatamessage\030\001 \003(\0132\035.protobuf.Aviati" +
+      "onDataMessageBC\n,no.mesan.miniprosjekt.k" +
+      "ommunikasjon.protobufB\021AviationDataProto" +
+      "H\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -681,6 +1375,12 @@ public final class AviationDataProto {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protobuf_AviationDataMessage_descriptor,
               new java.lang.String[] { "Id", "Accidentnumber", });
+          internal_static_protobuf_AviationDatasMessage_descriptor =
+            getDescriptor().getMessageTypes().get(1);
+          internal_static_protobuf_AviationDatasMessage_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_protobuf_AviationDatasMessage_descriptor,
+              new java.lang.String[] { "Aviationdatamessage", });
           return null;
         }
       };

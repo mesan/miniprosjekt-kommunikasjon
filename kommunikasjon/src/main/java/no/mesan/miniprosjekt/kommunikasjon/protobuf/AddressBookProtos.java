@@ -2523,9 +2523,9 @@ public final class AddressBookProtos {
       "\004type\030\002 \001(\0162\032.protobuf.Person.PhoneType:" +
       "\004HOME\"+\n\tPhoneType\022\n\n\006MOBILE\020\000\022\010\n\004HOME\020\001" +
       "\022\010\n\004WORK\020\002\"/\n\013AddressBook\022 \n\006person\030\001 \003(" +
-      "\0132\020.protobuf.PersonBA\n,no.mesan.minipros" +
+      "\0132\020.protobuf.PersonBC\n,no.mesan.minipros" +
       "jekt.kommunikasjon.protobufB\021AddressBook" +
-      "Protos"
+      "ProtosH\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

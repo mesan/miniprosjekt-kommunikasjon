@@ -4,6 +4,7 @@ package protobuf;
 
 option java_package = "no.mesan.miniprosjekt.kommunikasjon.protobuf";
 option java_outer_classname = "AddressBookProtos";
+option optimize_for = SPEED;
 
 message Person {
   required string name = 1;

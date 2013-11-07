@@ -1,0 +1,15 @@
+// See README.txt for information and build instructions.
+
+package protobuf;
+
+option java_package = "no.mesan.miniprosjekt.kommunikasjon.protobuf";
+option java_outer_classname = "OsProto";
+
+message OsMessage {
+  required string name = 1;
+  required bytes system = 2;
+}
+
+message OssMessage {
+  repeated OsMessage osmessage = 1;
+}
