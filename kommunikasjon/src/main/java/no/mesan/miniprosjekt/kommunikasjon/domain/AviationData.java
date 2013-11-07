@@ -1,5 +1,6 @@
 package no.mesan.miniprosjekt.kommunikasjon.domain;
 
+
 public class AviationData {
 
 	private String id;
