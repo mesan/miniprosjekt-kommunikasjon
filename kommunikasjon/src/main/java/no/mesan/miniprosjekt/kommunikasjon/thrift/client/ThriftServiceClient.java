@@ -14,31 +14,48 @@ public class ThriftServiceClient {
 	public static void main(String[] args) {
 
 		try {
-			long startAll = System.currentTimeMillis();
-			long start = System.currentTimeMillis();
+			long osTime, aircraftTime, aviationDataTime, totalTime;
+			osTime = aircraftTime = aviationDataTime = totalTime = 0L;
+		
+			int antallKjoeringer = 50;
 			
-			TTransport transport;
+			for (int i = 0; i < antallKjoeringer; i++) {
+				long startAll = System.currentTimeMillis();
+				long start = System.currentTimeMillis();
 
-			transport = new TSocket("localhost", 9090);
-			transport.open();
+				TTransport transport;
 
-			TProtocol protocol = new TBinaryProtocol(transport);
-			ThriftService.Client client = new ThriftService.Client(protocol);
+				transport = new TSocket("localhost", 9090);
+				transport.open();
 
-			List<OsThrift> os = client.getOs();
-			System.out.println("OS: " + (System.currentTimeMillis() - start) + "ms");
-			
-			start = System.currentTimeMillis();
-			List<AircraftThrift> aircrafts = client.getAircraft();
-			System.out.println("Aircrafts: " + (System.currentTimeMillis() - start) + "ms");
-			
-			start = System.currentTimeMillis();
-			List<AviationDataThrift> aviationData = client.getAviationData();
-			System.out.println("AviationData: " + (System.currentTimeMillis() - start) + "ms");
-			transport.close();
-			
-			long endAll = System.currentTimeMillis();
-			System.out.println("\nTotal: " + (endAll - startAll) + "ms");
+				TProtocol protocol = new TBinaryProtocol(transport);
+				ThriftService.Client client = new ThriftService.Client(protocol);
+
+				List<OsThrift> os = client.getOs();
+				osTime += (System.currentTimeMillis() - start);
+
+				start = System.currentTimeMillis();
+				List<AircraftThrift> aircrafts = client.getAircraft();
+				aircraftTime += (System.currentTimeMillis() - start);
+
+				start = System.currentTimeMillis();
+				List<AviationDataThrift> aviationData = client
+						.getAviationData();
+				aviationDataTime += (System.currentTimeMillis() - start);
+
+				transport.close();
+
+				long endAll = System.currentTimeMillis();
+				totalTime += endAll - startAll;
+				
+			}
+			System.out.println("OS: "
+					+ osTime/antallKjoeringer + "ms");
+			System.out.println("Aircrafts: "
+					+ aircraftTime/antallKjoeringer + "ms");
+			System.out.println("AviationData: "
+					+ aviationDataTime/antallKjoeringer + "ms");
+			System.out.println("\nTotal: " + totalTime/antallKjoeringer + "ms");
 		} catch (TTransportException e) {
 			e.printStackTrace();
 		} catch (TException x) {
