@@ -1,6 +1,9 @@
 package no.mesan.miniprosjekt.kommunikasjon.domain;
 
+import org.msgpack.annotation.Message;
 
+
+@Message
 public class AviationData {
 
 	private String id;
