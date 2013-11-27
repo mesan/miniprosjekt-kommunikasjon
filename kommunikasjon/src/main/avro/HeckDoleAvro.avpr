@@ -1,0 +1,26 @@
+{   "protocol": "AvroProtocol",
+    "namespace": "no.mesan.miniprosjekt.kommunikasjon.domain",
+
+    "types": [
+        {
+            "type": "record",
+            "name": "AvroAircraft",
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "drawing",
+                    "type": "bytes"
+                }
+            ]
+        }
+    ],
+    "messages": {
+        "send": {
+            "request": [],
+            "response": "AvroAircraft"
+        }
+    }
+}
