@@ -8,12 +8,16 @@ package no.mesan.miniprosjekt.kommunikasjon.domain;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public interface AvroProtocol {
-  public static final org.apache.avro.Protocol PROTOCOL = org.apache.avro.Protocol.parse("{\"protocol\":\"AvroProtocol\",\"namespace\":\"no.mesan.miniprosjekt.kommunikasjon.domain\",\"types\":[{\"type\":\"record\",\"name\":\"AvroAircraft\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"drawing\",\"type\":\"bytes\"}]}],\"messages\":{\"send\":{\"request\":[],\"response\":\"AvroAircraft\"}}}");
-  no.mesan.miniprosjekt.kommunikasjon.domain.AvroAircraft send() throws org.apache.avro.AvroRemoteException;
+  public static final org.apache.avro.Protocol PROTOCOL = org.apache.avro.Protocol.parse("{\"protocol\":\"AvroProtocol\",\"namespace\":\"no.mesan.miniprosjekt.kommunikasjon.domain\",\"types\":[{\"type\":\"record\",\"name\":\"AvroAircrafts\",\"fields\":[{\"name\":\"aircrafts\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"AvroAircraft\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"drawing\",\"type\":\"bytes\"}]}}}]},{\"type\":\"record\",\"name\":\"AvroAviationDatas\",\"fields\":[{\"name\":\"aviationDatas\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"AvroAviationData\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"accidentNumber\",\"type\":\"string\"}]}}}]},{\"type\":\"record\",\"name\":\"AvroOss\",\"fields\":[{\"name\":\"oss\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"AvroOs\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"system\",\"type\":\"bytes\"}]}}}]}],\"messages\":{\"getAircrafts\":{\"request\":[],\"response\":\"AvroAircrafts\"},\"getAviationDatas\":{\"request\":[],\"response\":\"AvroAviationDatas\"},\"getOss\":{\"request\":[],\"response\":\"AvroOss\"}}}");
+  no.mesan.miniprosjekt.kommunikasjon.domain.AvroAircrafts getAircrafts() throws org.apache.avro.AvroRemoteException;
+  no.mesan.miniprosjekt.kommunikasjon.domain.AvroAviationDatas getAviationDatas() throws org.apache.avro.AvroRemoteException;
+  no.mesan.miniprosjekt.kommunikasjon.domain.AvroOss getOss() throws org.apache.avro.AvroRemoteException;
 
   @SuppressWarnings("all")
   public interface Callback extends AvroProtocol {
     public static final org.apache.avro.Protocol PROTOCOL = no.mesan.miniprosjekt.kommunikasjon.domain.AvroProtocol.PROTOCOL;
-    void send(org.apache.avro.ipc.Callback<no.mesan.miniprosjekt.kommunikasjon.domain.AvroAircraft> callback) throws java.io.IOException;
+    void getAircrafts(org.apache.avro.ipc.Callback<no.mesan.miniprosjekt.kommunikasjon.domain.AvroAircrafts> callback) throws java.io.IOException;
+    void getAviationDatas(org.apache.avro.ipc.Callback<no.mesan.miniprosjekt.kommunikasjon.domain.AvroAviationDatas> callback) throws java.io.IOException;
+    void getOss(org.apache.avro.ipc.Callback<no.mesan.miniprosjekt.kommunikasjon.domain.AvroOss> callback) throws java.io.IOException;
   }
 }

@@ -152,6 +152,7 @@
 							<goal>protocol</goal>
 							<goal>idl-protocol</goal>
 						</goals>
+						
 					</execution>
 				</executions>
 			</plugin>
