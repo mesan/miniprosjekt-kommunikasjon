@@ -6,9 +6,14 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
+import no.mesan.miniprosjekt.kommunikasjon.data.AircraftDao;
+import no.mesan.miniprosjekt.kommunikasjon.data.AviationDataDao;
 import no.mesan.miniprosjekt.kommunikasjon.data.OsDao;
+import no.mesan.miniprosjekt.kommunikasjon.domain.Aircraft;
+import no.mesan.miniprosjekt.kommunikasjon.domain.AviationData;
 import no.mesan.miniprosjekt.kommunikasjon.domain.AvroAircraft;
 import no.mesan.miniprosjekt.kommunikasjon.domain.AvroAircrafts;
+import no.mesan.miniprosjekt.kommunikasjon.domain.AvroAviationData;
 import no.mesan.miniprosjekt.kommunikasjon.domain.AvroAviationDatas;
 import no.mesan.miniprosjekt.kommunikasjon.domain.AvroOs;
 import no.mesan.miniprosjekt.kommunikasjon.domain.AvroOss;
@@ -47,14 +52,29 @@ public class AvroServerApp {
 
 		@Override
 		public AvroAircrafts getAircrafts() throws AvroRemoteException {
-			// TODO Auto-generated method stub
-			return null;
+			AircraftDao dao = new AircraftDao();
+			List<Aircraft> aircrafts = dao.getAircrafts();
+			
+			List<AvroAircraft> avroAircrafts = new ArrayList<>();
+			
+			for(Aircraft aircraft : aircrafts) {
+				avroAircrafts.add(new AvroAircraft(aircraft.getName(), ByteBuffer.wrap(aircraft.getDrawing())));
+			}
+			
+			return new AvroAircrafts(avroAircrafts);
 		}
 
 		@Override
 		public AvroAviationDatas getAviationDatas() throws AvroRemoteException {
-			// TODO Auto-generated method stub
-			return null;
+			AviationDataDao dao = new AviationDataDao();
+			List<AviationData> aviationDatas = dao.getAviationData();
+			
+			List<AvroAviationData> avroAviationDatas = new ArrayList<>();
+			
+			for(AviationData aviationData : aviationDatas) {
+				avroAviationDatas.add(new AvroAviationData(aviationData.getId(), aviationData.getAccidentNumber()));
+			}
+			return new AvroAviationDatas(avroAviationDatas);
 		}
 
 		@Override
