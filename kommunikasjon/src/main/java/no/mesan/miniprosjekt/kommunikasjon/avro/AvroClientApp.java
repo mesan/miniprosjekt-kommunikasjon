@@ -1,15 +1,12 @@
 package no.mesan.miniprosjekt.kommunikasjon.avro;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.InetSocketAddress;
-import java.nio.ByteBuffer;
 
-import no.mesan.miniprosjekt.kommunikasjon.domain.AvroAircraft;
+import no.mesan.miniprosjekt.kommunikasjon.domain.AvroOss;
 import no.mesan.miniprosjekt.kommunikasjon.domain.AvroProtocol;
 
+import org.apache.avro.AvroRemoteException;
 import org.apache.avro.ipc.NettyTransceiver;
 import org.apache.avro.ipc.specific.SpecificRequestor;
 
@@ -24,29 +21,24 @@ public class AvroClientApp {
 		AvroProtocol proxy = (AvroProtocol) SpecificRequestor.getClient(
 				AvroProtocol.class, client);
 
-
-		AvroAircraft avroAircraft = proxy.send();
-		ByteBuffer drawing = (ByteBuffer) avroAircraft.getDrawing();
+		getOss(proxy);
 		
-		byte[] bytes = new byte[drawing.capacity()];
-		drawing.get(bytes, 0, bytes.length);
-		
-		System.out.println("length drawings: " + bytes.length);
-		
-		
-		OutputStream targetFile;
-		try {
-			targetFile = new FileOutputStream("linux.tar.xz");
-			targetFile.write(bytes);
-			targetFile.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		// cleanup
 		client.close();
+	}
+	
+	private static void getOss(AvroProtocol proxy) {
+		try {
+			// Deserialize
+			System.out.println("OS");
+			long start = System.currentTimeMillis();
+			AvroOss oss = proxy.getOss();
+			System.out.println("Time: " + (System.currentTimeMillis() - start));
+			System.out.println("size: " + oss.getOss().size());
+		} catch (AvroRemoteException e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 }
