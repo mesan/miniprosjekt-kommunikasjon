@@ -19,17 +19,16 @@ public class ThriftServiceClient {
 		
 			int antallKjoeringer = 50;
 			
+			TTransport transport;
+
+			transport = new TSocket("localhost", 9090);
+			transport.open();
+
+			TProtocol protocol = new TBinaryProtocol(transport);
+			ThriftService.Client client = new ThriftService.Client(protocol);
 			for (int i = 0; i < antallKjoeringer; i++) {
 				long startAll = System.currentTimeMillis();
 				long start = System.currentTimeMillis();
-
-				TTransport transport;
-
-				transport = new TSocket("localhost", 9090);
-				transport.open();
-
-				TProtocol protocol = new TBinaryProtocol(transport);
-				ThriftService.Client client = new ThriftService.Client(protocol);
 
 				List<OsThrift> os = client.getOs();
 				osTime += (System.currentTimeMillis() - start);
@@ -43,12 +42,13 @@ public class ThriftServiceClient {
 						.getAviationData();
 				aviationDataTime += (System.currentTimeMillis() - start);
 
-				transport.close();
+				
 
 				long endAll = System.currentTimeMillis();
 				totalTime += endAll - startAll;
 				
 			}
+			transport.close();
 			System.out.println("OS: "
 					+ osTime/antallKjoeringer + "ms");
 			System.out.println("Aircrafts: "
@@ -61,6 +61,8 @@ public class ThriftServiceClient {
 		} catch (TException x) {
 			x.printStackTrace();
 		}
+		
+		
 	}
 
 }
