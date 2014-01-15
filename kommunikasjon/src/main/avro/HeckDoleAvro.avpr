@@ -15,6 +15,34 @@
                     "type": "bytes"
                 }
             ]
+        },
+        {
+            "type": "record",
+            "name": "AvroAviationData",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "accidentNumber",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "record",
+            "name": "AvroOs",
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "system",
+                    "type": "bytes"
+                }
+            ]
         }
     ],
     "messages": {

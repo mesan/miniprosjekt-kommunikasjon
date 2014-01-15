@@ -17,7 +17,7 @@ import org.apache.avro.ipc.NettyServer;
 import org.apache.avro.ipc.Server;
 import org.apache.avro.ipc.specific.SpecificResponder;
 
-public class ServerApp {
+public class AvroServerApp {
 	public static class AvroProtocolImpl implements AvroProtocol {
 
 		@Override

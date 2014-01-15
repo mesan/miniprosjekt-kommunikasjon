@@ -13,7 +13,7 @@ import no.mesan.miniprosjekt.kommunikasjon.domain.AvroProtocol;
 import org.apache.avro.ipc.NettyTransceiver;
 import org.apache.avro.ipc.specific.SpecificRequestor;
 
-public class ClientApp {
+public class AvroClientApp {
 
 	public static void main(String[] args) throws IOException,
 			InterruptedException {
