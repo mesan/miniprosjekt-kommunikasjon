@@ -1,5 +1,9 @@
 package no.mesan.miniprosjekt.kommunikasjon.thrift.client;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.List;
 
 import org.apache.thrift.TException;
@@ -13,11 +17,10 @@ public class ThriftServiceClient {
 
 	public static void main(String[] args) {
 
-		try {
-			long osTime, aircraftTime, aviationDataTime, totalTime;
-			osTime = aircraftTime = aviationDataTime = totalTime = 0L;
+		int antallKjoeringer = 50;
 		
-			int antallKjoeringer = 50;
+		try {
+			long startAll = System.currentTimeMillis();
 			
 			TTransport transport;
 
@@ -26,8 +29,13 @@ public class ThriftServiceClient {
 
 			TProtocol protocol = new TBinaryProtocol(transport);
 			ThriftService.Client client = new ThriftService.Client(protocol);
+			
+			long osTime = 0;
+			long aircraftTime = 0;
+			long aviationDataTime = 0;
+			long totalTime = 0;
+			
 			for (int i = 0; i < antallKjoeringer; i++) {
-				long startAll = System.currentTimeMillis();
 				long start = System.currentTimeMillis();
 
 				List<OsThrift> os = client.getOs();
@@ -41,8 +49,6 @@ public class ThriftServiceClient {
 				List<AviationDataThrift> aviationData = client
 						.getAviationData();
 				aviationDataTime += (System.currentTimeMillis() - start);
-
-				
 
 				long endAll = System.currentTimeMillis();
 				totalTime += endAll - startAll;

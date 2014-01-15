@@ -38,8 +38,10 @@ public class BsonClient {
 		int responseCode = con.getResponseCode();
 		System.out.println("\nSending 'GET' request to URL : " + url);
 		System.out.println("Response Code : " + responseCode);
-
+		long start = System.currentTimeMillis();
 		ByteArrayInputStream bais = new ByteArrayInputStream(getBytesFromInputStream(con.getInputStream()));
+
+		System.out.println("Tid : " + (System.currentTimeMillis() - start));
 	    ObjectMapper mapper = new ObjectMapper(new BsonFactory());
 	    
 	    //List<AviationData> aviationDatas = mapper.readValue(bais, new TypeReference<List<AviationData>>(){});

@@ -8,7 +8,7 @@ import com.microsoft.sqlserver.jdbc.SQLServerDriver;
 
 public class DbTilkobling {
 
-	public static final String CONNECTION_URL = "jdbc:sqlserver://192.168.22.45:1433;"
+	public static final String CONNECTION_URL = "jdbc:sqlserver://127.0.0.1:1433;"
 			+ "databaseName=heckdole_prod;user=miniprosjekt;password=pass;";
 	
 	public Connection getConnection() {
