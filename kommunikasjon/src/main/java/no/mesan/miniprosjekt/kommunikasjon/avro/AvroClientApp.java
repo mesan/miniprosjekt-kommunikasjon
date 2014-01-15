@@ -16,7 +16,7 @@ public class AvroClientApp {
 			InterruptedException {
 
 		NettyTransceiver client = new NettyTransceiver(new InetSocketAddress(
-				65111));
+				"192.168.0.188", 65111));
 
 		AvroProtocol proxy = (AvroProtocol) SpecificRequestor.getClient(
 				AvroProtocol.class, client);
@@ -34,7 +34,7 @@ public class AvroClientApp {
 			long start = System.currentTimeMillis();
 			AvroOss oss = proxy.getOss();
 			System.out.println("Time: " + (System.currentTimeMillis() - start));
-			System.out.println("size: " + oss.getOss().size());
+			System.out.println("size: " + oss.getOss().get(0).getSystem().array().length);
 		} catch (AvroRemoteException e) {
 			e.printStackTrace();
 		}

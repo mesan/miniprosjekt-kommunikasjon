@@ -13,7 +13,7 @@ public class ProtobufClient {
 
 	private final String USER_AGENT = "Mozilla/5.0";
 
-	private final static double NUMBER_OF_ITERATIONS = 50.0;
+	private final static double NUMBER_OF_ITERATIONS = 1.0;
 	
 	public static void main(String[] args) throws Exception {
 
@@ -140,7 +140,7 @@ public class ProtobufClient {
 
 		OssMessage ossMessages = OssMessage.newBuilder()
 				.mergeFrom(response.getEntity().getContent()).build();
-//		System.out.println("Size os protobuf = " + ossMessages.getSerializedSize());
+		System.out.println("Size os protobuf = " + ossMessages.getSerializedSize());
 	}
 
 }

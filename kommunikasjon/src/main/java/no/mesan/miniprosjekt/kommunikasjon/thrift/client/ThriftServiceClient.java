@@ -17,14 +17,14 @@ public class ThriftServiceClient {
 
 	public static void main(String[] args) {
 
-		int antallKjoeringer = 50;
+		int antallKjoeringer = 1;
 		
 		try {
 			long startAll = System.currentTimeMillis();
 			
 			TTransport transport;
 
-			transport = new TSocket("localhost", 9090);
+			transport = new TSocket("192.168.0.188", 9090);
 			transport.open();
 
 			TProtocol protocol = new TBinaryProtocol(transport);

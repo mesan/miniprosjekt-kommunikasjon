@@ -28,7 +28,7 @@ public class MsgPackClient {
 		Client cli = new Client("192.168.0.188", 1985, loop);
 		RPCInterface iface = cli.proxy(RPCInterface.class);
 		
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 1; i++) {
 			getAircrafts(iface);
 			getAviationData(iface);
 			getOss(iface);
@@ -57,7 +57,7 @@ public class MsgPackClient {
 		long start = System.currentTimeMillis();
 		OsDto osDto = msgpack.read(iface.getOss(), OsDto.class);
 		System.out.println("Time: " + (System.currentTimeMillis() - start));
-		System.out.println("size: " + osDto.getOss().size());
+		System.out.println("size: " + osDto.getOss().get(0).getSystem().length);
 	}
 
 	private static void getAircrafts(RPCInterface iface) throws IOException {

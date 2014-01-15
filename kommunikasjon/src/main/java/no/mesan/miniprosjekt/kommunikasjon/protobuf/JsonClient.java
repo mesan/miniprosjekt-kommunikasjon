@@ -2,8 +2,11 @@ package no.mesan.miniprosjekt.kommunikasjon.protobuf;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
  
+
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -14,7 +17,7 @@ public class JsonClient {
  
 	private final String USER_AGENT = "Mozilla/5.0";
 	
-	private final static double NUMBER_OF_ITERATIONS = 50.0;
+	private final static double NUMBER_OF_ITERATIONS = 1.0;
 	public static void main(String[] args) throws Exception {
  
 		JsonClient jsonClient = new JsonClient();
@@ -75,6 +78,11 @@ public class JsonClient {
  
 		
 		HttpResponse response = client.execute(request);
+		ByteArrayOutputStream b = new ByteArrayOutputStream();
+		byte[] bytesFromInputStream = getBytesFromInputStream(response.getEntity().getContent());
+		
+		System.out.println("Size aircrafts json = " + bytesFromInputStream.length);
+		
 	}
 	
 	private void getAviationData() throws Exception {
@@ -90,7 +98,11 @@ public class JsonClient {
  
 		
 		HttpResponse response = client.execute(request);
-
+		ByteArrayOutputStream b = new ByteArrayOutputStream();
+		byte[] bytesFromInputStream = getBytesFromInputStream(response.getEntity().getContent());
+		
+		System.out.println("Size aviationdata json = " + bytesFromInputStream.length);
+		
 	}
 	
 	private void getOss() throws Exception {
@@ -106,13 +118,27 @@ public class JsonClient {
 		
 		HttpResponse response = client.execute(request);
 		ByteArrayOutputStream b = new ByteArrayOutputStream();
+		byte[] bytesFromInputStream = getBytesFromInputStream(response.getEntity().getContent());
 		
-		response.getEntity().getContent().read(b.toByteArray());
-//		System.out.println("Size os json = " + b.size());
+		System.out.println("Size os json = " + bytesFromInputStream.length);
 		
 	}
 		
  
+	public static byte[] getBytesFromInputStream(InputStream is) {
+		try (ByteArrayOutputStream os = new ByteArrayOutputStream();) {
+			byte[] buffer = new byte[0xFFFF];
+
+			for (int len; (len = is.read(buffer)) != -1;)
+				os.write(buffer, 0, len);
+
+			os.flush();
+
+			return os.toByteArray();
+		} catch (IOException e) {
+			return null;
+		}
+	}
 //		System.out.println("\nSending 'GET' request to URL : " + url);
 //		System.out.println("Response Code : " + 
 //                       response.getStatusLine().getStatusCode());
