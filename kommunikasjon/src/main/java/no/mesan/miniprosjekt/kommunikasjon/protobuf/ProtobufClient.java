@@ -61,7 +61,7 @@ public class ProtobufClient {
 
 	private void getAviationData() throws Exception {
 
-		String url = "http://127.0.0.1:8080/protobuf/aviationdata";
+		String url = "http://192.168.0.188:8080/protobuf/aviationdata";
 
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
@@ -95,7 +95,7 @@ public class ProtobufClient {
 	// HTTP GET request
 	private void getAircrafts() throws Exception {
 
-		String url = "http://127.0.0.1:8080/protobuf/aircrafts";
+		String url = "http://192.168.0.188:8080/protobuf/aircrafts";
 
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
@@ -127,7 +127,7 @@ public class ProtobufClient {
 	
 	private void getOss() throws Exception {
 
-		String url = "http://127.0.0.1:8080/protobuf/os";
+		String url = "http://192.168.0.188:8080/protobuf/os";
 
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);

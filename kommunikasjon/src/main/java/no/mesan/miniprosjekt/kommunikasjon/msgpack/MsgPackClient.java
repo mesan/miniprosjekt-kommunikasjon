@@ -25,7 +25,7 @@ public class MsgPackClient {
 	public static void main(String[] args) throws Exception {
 		EventLoop loop = EventLoop.defaultEventLoop();
 
-		Client cli = new Client("localhost", 1985, loop);
+		Client cli = new Client("192.168.0.188", 1985, loop);
 		RPCInterface iface = cli.proxy(RPCInterface.class);
 		
 		for (int i = 0; i < 10; i++) {

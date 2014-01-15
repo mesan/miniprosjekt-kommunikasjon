@@ -64,7 +64,7 @@ public class JsonClient {
 	// HTTP GET request
 	private void getAircrafts() throws Exception {
  
-		String url = "http://127.0.0.1:8080/json/aircrafts";
+		String url = "http://192.168.0.188:8080/json/aircrafts";
  
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
@@ -79,7 +79,7 @@ public class JsonClient {
 	
 	private void getAviationData() throws Exception {
 		 
-		String url = "http://127.0.0.1:8080/json/aviationdata";
+		String url = "http://192.168.0.188:8080/json/aviationdata";
  
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
@@ -94,7 +94,7 @@ public class JsonClient {
 	}
 	
 	private void getOss() throws Exception {
-		String url = "http://127.0.0.1:8080/json/os";
+		String url = "http://192.168.0.188:8080/json/os";
 		 
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
