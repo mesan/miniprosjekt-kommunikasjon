@@ -1,0 +1,36 @@
+Protobuf:
+Tid totalt 33699 ms
+Gjennomsnitt os: 30208.0
+Gjennomsnitt aviation data: 1552.0
+Gjennomsnitt aircrafts: 1939.0
+
+Json:
+Tid totalt 47229 ms
+Gjennomsnitt os: 43147.0
+Gjennomsnitt aviation data: 3061.0
+Gjennomsnitt aircrafts: 1021.0
+
+Thrift:
+OS: 25347ms
+Aircrafts: 1042ms
+AviationData: 1467ms
+Total: 27911ms
+
+Message pack:
+AIRCRAFTS
+Time: 1583
+AVIATIONDATA
+Time: 1658
+OS
+Time: 23484
+
+Avro:
+Aircrafts
+Time: 1143
+size: 719348
+AviationData
+Time: 1781
+size: 74149
+OS
+Time: 24254
+size: 75086320
