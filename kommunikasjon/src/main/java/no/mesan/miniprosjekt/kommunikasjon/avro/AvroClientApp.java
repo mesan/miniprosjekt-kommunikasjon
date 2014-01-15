@@ -3,6 +3,8 @@ package no.mesan.miniprosjekt.kommunikasjon.avro;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 
+import no.mesan.miniprosjekt.kommunikasjon.domain.AvroAircrafts;
+import no.mesan.miniprosjekt.kommunikasjon.domain.AvroAviationDatas;
 import no.mesan.miniprosjekt.kommunikasjon.domain.AvroOss;
 import no.mesan.miniprosjekt.kommunikasjon.domain.AvroProtocol;
 
@@ -21,6 +23,8 @@ public class AvroClientApp {
 		AvroProtocol proxy = (AvroProtocol) SpecificRequestor.getClient(
 				AvroProtocol.class, client);
 
+		getAircrafts(proxy);
+		getAviationData(proxy);
 		getOss(proxy);
 		
 		// cleanup
@@ -38,7 +42,34 @@ public class AvroClientApp {
 		} catch (AvroRemoteException e) {
 			e.printStackTrace();
 		}
-		
-		
+	}
+	
+
+	
+	private static void getAviationData(AvroProtocol proxy) {
+		try {
+			// Deserialize
+			System.out.println("AviationData");
+			long start = System.currentTimeMillis();
+			AvroAviationDatas aviationDatas = proxy.getAviationDatas();
+			System.out.println("Time: " + (System.currentTimeMillis() - start));
+			System.out.println("size: " + aviationDatas.getAviationDatas().size());
+		} catch (AvroRemoteException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	private static void getAircrafts(AvroProtocol proxy) {
+		try {
+			// Deserialize
+			System.out.println("Aircrafts");
+			long start = System.currentTimeMillis();
+			AvroAircrafts aircrafts = proxy.getAircrafts();
+			System.out.println("Time: " + (System.currentTimeMillis() - start));
+			System.out.println("size: " + aircrafts.getAircrafts().get(0).getDrawing().array().length);
+		} catch (AvroRemoteException e) {
+			e.printStackTrace();
+		}
 	}
 }
