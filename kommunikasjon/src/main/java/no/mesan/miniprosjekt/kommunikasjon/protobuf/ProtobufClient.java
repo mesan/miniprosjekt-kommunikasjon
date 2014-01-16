@@ -1,8 +1,8 @@
 package no.mesan.miniprosjekt.kommunikasjon.protobuf;
 
 import no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages;
-import no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage;
-import no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage;
+import no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessages;
+import no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -79,7 +79,7 @@ public class ProtobufClient {
 		// BufferedReader rd = new BufferedReader(new InputStreamReader(response
 		// .getEntity().getContent()));
 
-		AviationDatasMessage aviationDatasMessage = AviationDatasMessage
+		AviationDataMessages aviationDatasMessage = AviationDataMessages
 				.newBuilder().mergeFrom(response.getEntity().getContent())
 				.build();
 		// StringBuffer result = new StringBuffer();
@@ -138,7 +138,7 @@ public class ProtobufClient {
 
 		HttpResponse response = client.execute(request);
 
-		OssMessage ossMessages = OssMessage.newBuilder()
+		OsMessages ossMessages = OsMessages.newBuilder()
 				.mergeFrom(response.getEntity().getContent()).build();
 		System.out.println("Size os protobuf = " + ossMessages.getSerializedSize());
 	}

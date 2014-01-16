@@ -8,194 +8,471 @@ public final class AircraftProto {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
-  public interface AircraftMessageOrBuilder
+  public interface RequestOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-
-    // required string name = 1;
-    /**
-     * <code>required string name = 1;</code>
-     */
-    boolean hasName();
-    /**
-     * <code>required string name = 1;</code>
-     */
-    java.lang.String getName();
-    /**
-     * <code>required string name = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    // required bytes drawing = 2;
-    /**
-     * <code>required bytes drawing = 2;</code>
-     */
-    boolean hasDrawing();
-    /**
-     * <code>required bytes drawing = 2;</code>
-     */
-    com.google.protobuf.ByteString getDrawing();
+    
+    // required string request = 1;
+    boolean hasRequest();
+    String getRequest();
   }
-  /**
-   * Protobuf type {@code protobuf.AircraftMessage}
-   */
-  public static final class AircraftMessage extends
+  public static final class Request extends
       com.google.protobuf.GeneratedMessage
-      implements AircraftMessageOrBuilder {
-    // Use AircraftMessage.newBuilder() to construct.
-    private AircraftMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements RequestOrBuilder {
+    // Use Request.newBuilder() to construct.
+    private Request(Builder builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private AircraftMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final AircraftMessage defaultInstance;
-    public static AircraftMessage getDefaultInstance() {
+    private Request(boolean noInit) {}
+    
+    private static final Request defaultInstance;
+    public static Request getDefaultInstance() {
       return defaultInstance;
     }
-
-    public AircraftMessage getDefaultInstanceForType() {
+    
+    public Request getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_Request_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_Request_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required string request = 1;
+    public static final int REQUEST_FIELD_NUMBER = 1;
+    private java.lang.Object request_;
+    public boolean hasRequest() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public String getRequest() {
+      java.lang.Object ref = request_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          request_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getRequestBytes() {
+      java.lang.Object ref = request_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        request_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      request_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasRequest()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getRequestBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getRequestBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
     }
-    private AircraftMessage(
-        com.google.protobuf.CodedInputStream input,
+    
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request parseFrom(
+        com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.RequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_Request_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_Request_fieldAccessorTable;
+      }
+      
+      // Construct using no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        request_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request.getDescriptor();
+      }
+      
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request getDefaultInstanceForType() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request.getDefaultInstance();
+      }
+      
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request build() {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request buildPartial() {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request result = new no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.request_ = request_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request) {
+          return mergeFrom((no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request other) {
+        if (other == no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          setRequest(other.getRequest());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasRequest()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              done = true;
-              break;
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
             default: {
               if (!parseUnknownField(input, unknownFields,
                                      extensionRegistry, tag)) {
-                done = true;
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
               }
               break;
             }
             case 10: {
               bitField0_ |= 0x00000001;
-              name_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              drawing_ = input.readBytes();
+              request_ = input.readBytes();
               break;
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
       }
+      
+      private int bitField0_;
+      
+      // required string request = 1;
+      private java.lang.Object request_ = "";
+      public boolean hasRequest() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public String getRequest() {
+        java.lang.Object ref = request_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          request_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setRequest(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        request_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRequest() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        request_ = getDefaultInstance().getRequest();
+        onChanged();
+        return this;
+      }
+      void setRequest(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        request_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:protobuf.Request)
     }
+    
+    static {
+      defaultInstance = new Request(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:protobuf.Request)
+  }
+  
+  public interface AircraftMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required string name = 1;
+    boolean hasName();
+    String getName();
+    
+    // required bytes drawing = 2;
+    boolean hasDrawing();
+    com.google.protobuf.ByteString getDrawing();
+  }
+  public static final class AircraftMessage extends
+      com.google.protobuf.GeneratedMessage
+      implements AircraftMessageOrBuilder {
+    // Use AircraftMessage.newBuilder() to construct.
+    private AircraftMessage(Builder builder) {
+      super(builder);
+    }
+    private AircraftMessage(boolean noInit) {}
+    
+    private static final AircraftMessage defaultInstance;
+    public static AircraftMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public AircraftMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessage_descriptor;
     }
-
+    
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessage_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.class, no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.Builder.class);
+      return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessage_fieldAccessorTable;
     }
-
-    public static com.google.protobuf.Parser<AircraftMessage> PARSER =
-        new com.google.protobuf.AbstractParser<AircraftMessage>() {
-      public AircraftMessage parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AircraftMessage(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AircraftMessage> getParserForType() {
-      return PARSER;
-    }
-
+    
     private int bitField0_;
     // required string name = 1;
     public static final int NAME_FIELD_NUMBER = 1;
     private java.lang.Object name_;
-    /**
-     * <code>required string name = 1;</code>
-     */
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>required string name = 1;</code>
-     */
-    public java.lang.String getName() {
+    public String getName() {
       java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           name_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>required string name = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    private com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // required bytes drawing = 2;
     public static final int DRAWING_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString drawing_;
-    /**
-     * <code>required bytes drawing = 2;</code>
-     */
     public boolean hasDrawing() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <code>required bytes drawing = 2;</code>
-     */
     public com.google.protobuf.ByteString getDrawing() {
       return drawing_;
     }
-
+    
     private void initFields() {
       name_ = "";
       drawing_ = com.google.protobuf.ByteString.EMPTY;
@@ -204,7 +481,7 @@ public final class AircraftProto {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       if (!hasName()) {
         memoizedIsInitialized = 0;
         return false;
@@ -216,7 +493,7 @@ public final class AircraftProto {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -228,12 +505,12 @@ public final class AircraftProto {
       }
       getUnknownFields().writeTo(output);
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -247,83 +524,94 @@ public final class AircraftProto {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
+    
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code protobuf.AircraftMessage}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessageOrBuilder {
@@ -331,21 +619,18 @@ public final class AircraftProto {
           getDescriptor() {
         return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessage_descriptor;
       }
-
+      
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessage_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.class, no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.Builder.class);
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessage_fieldAccessorTable;
       }
-
+      
       // Construct using no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      
+      private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -356,7 +641,7 @@ public final class AircraftProto {
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -365,20 +650,20 @@ public final class AircraftProto {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessage_descriptor;
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.getDescriptor();
       }
-
+      
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage getDefaultInstanceForType() {
         return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.getDefaultInstance();
       }
-
+      
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage build() {
         no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage result = buildPartial();
         if (!result.isInitialized()) {
@@ -386,7 +671,17 @@ public final class AircraftProto {
         }
         return result;
       }
-
+      
+      private no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage buildPartial() {
         no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage result = new no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage(this);
         int from_bitField0_ = bitField0_;
@@ -403,7 +698,7 @@ public final class AircraftProto {
         onBuilt();
         return result;
       }
-
+      
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage) {
           return mergeFrom((no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage)other);
@@ -412,13 +707,11 @@ public final class AircraftProto {
           return this;
         }
       }
-
+      
       public Builder mergeFrom(no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage other) {
         if (other == no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.getDefaultInstance()) return this;
         if (other.hasName()) {
-          bitField0_ |= 0x00000001;
-          name_ = other.name_;
-          onChanged();
+          setName(other.getName());
         }
         if (other.hasDrawing()) {
           setDrawing(other.getDrawing());
@@ -426,7 +719,7 @@ public final class AircraftProto {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-
+      
       public final boolean isInitialized() {
         if (!hasName()) {
           
@@ -438,69 +731,62 @@ public final class AircraftProto {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              name_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              drawing_ = input.readBytes();
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // required string name = 1;
       private java.lang.Object name_ = "";
-      /**
-       * <code>required string name = 1;</code>
-       */
       public boolean hasName() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required string name = 1;</code>
-       */
-      public java.lang.String getName() {
+      public String getName() {
         java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           name_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>required string name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string name = 1;</code>
-       */
-      public Builder setName(
-          java.lang.String value) {
+      public Builder setName(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -509,46 +795,26 @@ public final class AircraftProto {
         onChanged();
         return this;
       }
-      /**
-       * <code>required string name = 1;</code>
-       */
       public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000001);
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
-      /**
-       * <code>required string name = 1;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+      void setName(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
         name_ = value;
         onChanged();
-        return this;
       }
-
+      
       // required bytes drawing = 2;
       private com.google.protobuf.ByteString drawing_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>required bytes drawing = 2;</code>
-       */
       public boolean hasDrawing() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>required bytes drawing = 2;</code>
-       */
       public com.google.protobuf.ByteString getDrawing() {
         return drawing_;
       }
-      /**
-       * <code>required bytes drawing = 2;</code>
-       */
       public Builder setDrawing(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -558,192 +824,86 @@ public final class AircraftProto {
         onChanged();
         return this;
       }
-      /**
-       * <code>required bytes drawing = 2;</code>
-       */
       public Builder clearDrawing() {
         bitField0_ = (bitField0_ & ~0x00000002);
         drawing_ = getDefaultInstance().getDrawing();
         onChanged();
         return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:protobuf.AircraftMessage)
     }
-
+    
     static {
       defaultInstance = new AircraftMessage(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:protobuf.AircraftMessage)
   }
-
+  
   public interface AircraftMessagesOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-
+    
     // repeated .protobuf.AircraftMessage aircraftmessage = 1;
-    /**
-     * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-     */
     java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage> 
         getAircraftmessageList();
-    /**
-     * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-     */
     no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage getAircraftmessage(int index);
-    /**
-     * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-     */
     int getAircraftmessageCount();
-    /**
-     * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-     */
     java.util.List<? extends no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessageOrBuilder> 
         getAircraftmessageOrBuilderList();
-    /**
-     * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-     */
     no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessageOrBuilder getAircraftmessageOrBuilder(
         int index);
   }
-  /**
-   * Protobuf type {@code protobuf.AircraftMessages}
-   */
   public static final class AircraftMessages extends
       com.google.protobuf.GeneratedMessage
       implements AircraftMessagesOrBuilder {
     // Use AircraftMessages.newBuilder() to construct.
-    private AircraftMessages(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private AircraftMessages(Builder builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private AircraftMessages(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
+    private AircraftMessages(boolean noInit) {}
+    
     private static final AircraftMessages defaultInstance;
     public static AircraftMessages getDefaultInstance() {
       return defaultInstance;
     }
-
+    
     public AircraftMessages getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private AircraftMessages(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                aircraftmessage_ = new java.util.ArrayList<no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              aircraftmessage_.add(input.readMessage(no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.PARSER, extensionRegistry));
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          aircraftmessage_ = java.util.Collections.unmodifiableList(aircraftmessage_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+    
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessages_descriptor;
     }
-
+    
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessages_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages.class, no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages.Builder.class);
+      return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessages_fieldAccessorTable;
     }
-
-    public static com.google.protobuf.Parser<AircraftMessages> PARSER =
-        new com.google.protobuf.AbstractParser<AircraftMessages>() {
-      public AircraftMessages parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AircraftMessages(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AircraftMessages> getParserForType() {
-      return PARSER;
-    }
-
+    
     // repeated .protobuf.AircraftMessage aircraftmessage = 1;
     public static final int AIRCRAFTMESSAGE_FIELD_NUMBER = 1;
     private java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage> aircraftmessage_;
-    /**
-     * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-     */
     public java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage> getAircraftmessageList() {
       return aircraftmessage_;
     }
-    /**
-     * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-     */
     public java.util.List<? extends no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessageOrBuilder> 
         getAircraftmessageOrBuilderList() {
       return aircraftmessage_;
     }
-    /**
-     * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-     */
     public int getAircraftmessageCount() {
       return aircraftmessage_.size();
     }
-    /**
-     * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-     */
     public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage getAircraftmessage(int index) {
       return aircraftmessage_.get(index);
     }
-    /**
-     * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-     */
     public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessageOrBuilder getAircraftmessageOrBuilder(
         int index) {
       return aircraftmessage_.get(index);
     }
-
+    
     private void initFields() {
       aircraftmessage_ = java.util.Collections.emptyList();
     }
@@ -751,7 +911,7 @@ public final class AircraftProto {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       for (int i = 0; i < getAircraftmessageCount(); i++) {
         if (!getAircraftmessage(i).isInitialized()) {
           memoizedIsInitialized = 0;
@@ -761,7 +921,7 @@ public final class AircraftProto {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -770,12 +930,12 @@ public final class AircraftProto {
       }
       getUnknownFields().writeTo(output);
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       for (int i = 0; i < aircraftmessage_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -785,83 +945,94 @@ public final class AircraftProto {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
+    
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code protobuf.AircraftMessages}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessagesOrBuilder {
@@ -869,21 +1040,18 @@ public final class AircraftProto {
           getDescriptor() {
         return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessages_descriptor;
       }
-
+      
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessages_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages.class, no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages.Builder.class);
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessages_fieldAccessorTable;
       }
-
+      
       // Construct using no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      
+      private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -895,7 +1063,7 @@ public final class AircraftProto {
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         if (aircraftmessageBuilder_ == null) {
@@ -906,20 +1074,20 @@ public final class AircraftProto {
         }
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.internal_static_protobuf_AircraftMessages_descriptor;
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages.getDescriptor();
       }
-
+      
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages getDefaultInstanceForType() {
         return no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages.getDefaultInstance();
       }
-
+      
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages build() {
         no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages result = buildPartial();
         if (!result.isInitialized()) {
@@ -927,7 +1095,17 @@ public final class AircraftProto {
         }
         return result;
       }
-
+      
+      private no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages buildPartial() {
         no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages result = new no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages(this);
         int from_bitField0_ = bitField0_;
@@ -943,7 +1121,7 @@ public final class AircraftProto {
         onBuilt();
         return result;
       }
-
+      
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages) {
           return mergeFrom((no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages)other);
@@ -952,7 +1130,7 @@ public final class AircraftProto {
           return this;
         }
       }
-
+      
       public Builder mergeFrom(no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages other) {
         if (other == no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages.getDefaultInstance()) return this;
         if (aircraftmessageBuilder_ == null) {
@@ -984,7 +1162,7 @@ public final class AircraftProto {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-
+      
       public final boolean isInitialized() {
         for (int i = 0; i < getAircraftmessageCount(); i++) {
           if (!getAircraftmessage(i).isInitialized()) {
@@ -994,26 +1172,42 @@ public final class AircraftProto {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.Builder subBuilder = no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addAircraftmessage(subBuilder.buildPartial());
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // repeated .protobuf.AircraftMessage aircraftmessage = 1;
       private java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage> aircraftmessage_ =
         java.util.Collections.emptyList();
@@ -1023,13 +1217,10 @@ public final class AircraftProto {
           bitField0_ |= 0x00000001;
          }
       }
-
+      
       private com.google.protobuf.RepeatedFieldBuilder<
           no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage, no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.Builder, no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessageOrBuilder> aircraftmessageBuilder_;
-
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
+      
       public java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage> getAircraftmessageList() {
         if (aircraftmessageBuilder_ == null) {
           return java.util.Collections.unmodifiableList(aircraftmessage_);
@@ -1037,9 +1228,6 @@ public final class AircraftProto {
           return aircraftmessageBuilder_.getMessageList();
         }
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public int getAircraftmessageCount() {
         if (aircraftmessageBuilder_ == null) {
           return aircraftmessage_.size();
@@ -1047,9 +1235,6 @@ public final class AircraftProto {
           return aircraftmessageBuilder_.getCount();
         }
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage getAircraftmessage(int index) {
         if (aircraftmessageBuilder_ == null) {
           return aircraftmessage_.get(index);
@@ -1057,9 +1242,6 @@ public final class AircraftProto {
           return aircraftmessageBuilder_.getMessage(index);
         }
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public Builder setAircraftmessage(
           int index, no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage value) {
         if (aircraftmessageBuilder_ == null) {
@@ -1074,9 +1256,6 @@ public final class AircraftProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public Builder setAircraftmessage(
           int index, no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.Builder builderForValue) {
         if (aircraftmessageBuilder_ == null) {
@@ -1088,9 +1267,6 @@ public final class AircraftProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public Builder addAircraftmessage(no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage value) {
         if (aircraftmessageBuilder_ == null) {
           if (value == null) {
@@ -1104,9 +1280,6 @@ public final class AircraftProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public Builder addAircraftmessage(
           int index, no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage value) {
         if (aircraftmessageBuilder_ == null) {
@@ -1121,9 +1294,6 @@ public final class AircraftProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public Builder addAircraftmessage(
           no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.Builder builderForValue) {
         if (aircraftmessageBuilder_ == null) {
@@ -1135,9 +1305,6 @@ public final class AircraftProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public Builder addAircraftmessage(
           int index, no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.Builder builderForValue) {
         if (aircraftmessageBuilder_ == null) {
@@ -1149,9 +1316,6 @@ public final class AircraftProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public Builder addAllAircraftmessage(
           java.lang.Iterable<? extends no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage> values) {
         if (aircraftmessageBuilder_ == null) {
@@ -1163,9 +1327,6 @@ public final class AircraftProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public Builder clearAircraftmessage() {
         if (aircraftmessageBuilder_ == null) {
           aircraftmessage_ = java.util.Collections.emptyList();
@@ -1176,9 +1337,6 @@ public final class AircraftProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public Builder removeAircraftmessage(int index) {
         if (aircraftmessageBuilder_ == null) {
           ensureAircraftmessageIsMutable();
@@ -1189,16 +1347,10 @@ public final class AircraftProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.Builder getAircraftmessageBuilder(
           int index) {
         return getAircraftmessageFieldBuilder().getBuilder(index);
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessageOrBuilder getAircraftmessageOrBuilder(
           int index) {
         if (aircraftmessageBuilder_ == null) {
@@ -1206,9 +1358,6 @@ public final class AircraftProto {
           return aircraftmessageBuilder_.getMessageOrBuilder(index);
         }
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public java.util.List<? extends no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessageOrBuilder> 
            getAircraftmessageOrBuilderList() {
         if (aircraftmessageBuilder_ != null) {
@@ -1217,24 +1366,15 @@ public final class AircraftProto {
           return java.util.Collections.unmodifiableList(aircraftmessage_);
         }
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.Builder addAircraftmessageBuilder() {
         return getAircraftmessageFieldBuilder().addBuilder(
             no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.getDefaultInstance());
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.Builder addAircraftmessageBuilder(
           int index) {
         return getAircraftmessageFieldBuilder().addBuilder(
             index, no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.getDefaultInstance());
       }
-      /**
-       * <code>repeated .protobuf.AircraftMessage aircraftmessage = 1;</code>
-       */
       public java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.Builder> 
            getAircraftmessageBuilderList() {
         return getAircraftmessageFieldBuilder().getBuilderList();
@@ -1253,18 +1393,23 @@ public final class AircraftProto {
         }
         return aircraftmessageBuilder_;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:protobuf.AircraftMessages)
     }
-
+    
     static {
       defaultInstance = new AircraftMessages(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:protobuf.AircraftMessages)
   }
-
+  
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_protobuf_Request_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_protobuf_Request_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_protobuf_AircraftMessage_descriptor;
   private static
@@ -1275,7 +1420,7 @@ public final class AircraftProto {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_protobuf_AircraftMessages_fieldAccessorTable;
-
+  
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
@@ -1284,30 +1429,43 @@ public final class AircraftProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016aircraft.proto\022\010protobuf\"0\n\017AircraftMe" +
-      "ssage\022\014\n\004name\030\001 \002(\t\022\017\n\007drawing\030\002 \002(\014\"F\n\020" +
-      "AircraftMessages\0222\n\017aircraftmessage\030\001 \003(" +
-      "\0132\031.protobuf.AircraftMessageB?\n,no.mesan" +
-      ".miniprosjekt.kommunikasjon.protobufB\rAi" +
-      "rcraftProtoH\001"
+      "\n\016aircraft.proto\022\010protobuf\"\032\n\007Request\022\017\n" +
+      "\007request\030\001 \002(\t\"0\n\017AircraftMessage\022\014\n\004nam" +
+      "e\030\001 \002(\t\022\017\n\007drawing\030\002 \002(\014\"F\n\020AircraftMess" +
+      "ages\0222\n\017aircraftmessage\030\001 \003(\0132\031.protobuf" +
+      ".AircraftMessageB?\n,no.mesan.miniprosjek" +
+      "t.kommunikasjon.protobufB\rAircraftProtoH" +
+      "\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
             com.google.protobuf.Descriptors.FileDescriptor root) {
           descriptor = root;
-          internal_static_protobuf_AircraftMessage_descriptor =
+          internal_static_protobuf_Request_descriptor =
             getDescriptor().getMessageTypes().get(0);
+          internal_static_protobuf_Request_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_protobuf_Request_descriptor,
+              new java.lang.String[] { "Request", },
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request.class,
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.Request.Builder.class);
+          internal_static_protobuf_AircraftMessage_descriptor =
+            getDescriptor().getMessageTypes().get(1);
           internal_static_protobuf_AircraftMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protobuf_AircraftMessage_descriptor,
-              new java.lang.String[] { "Name", "Drawing", });
+              new java.lang.String[] { "Name", "Drawing", },
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.class,
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage.Builder.class);
           internal_static_protobuf_AircraftMessages_descriptor =
-            getDescriptor().getMessageTypes().get(1);
+            getDescriptor().getMessageTypes().get(2);
           internal_static_protobuf_AircraftMessages_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protobuf_AircraftMessages_descriptor,
-              new java.lang.String[] { "Aircraftmessage", });
+              new java.lang.String[] { "Aircraftmessage", },
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages.class,
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages.Builder.class);
           return null;
         }
       };
@@ -1316,6 +1474,6 @@ public final class AircraftProto {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
   }
-
+  
   // @@protoc_insertion_point(outer_class_scope)
 }

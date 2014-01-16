@@ -1,0 +1,13 @@
+// See README.txt for information and build instructions.
+
+package protobuf;
+
+import "aviationdata.proto";
+option java_package = "no.mesan.miniprosjekt.kommunikasjon.protobuf";
+option java_outer_classname = "AviationDataProtoService";
+option java_generic_services = true; //if you don't do this, protoc wont generate the stubs you need for rpc
+
+service GetAviationDataService //in a generated file, look for this guy as an abstract class, you gonna extend it.
+{
+    rpc getAviationData(Request) returns (AviationDataMessages);
+}

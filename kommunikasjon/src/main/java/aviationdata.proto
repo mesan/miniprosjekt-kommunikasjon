@@ -6,11 +6,15 @@ option java_package = "no.mesan.miniprosjekt.kommunikasjon.protobuf";
 option java_outer_classname = "AviationDataProto";
 option optimize_for = SPEED;
 
+message Request {
+  required string request = 1;
+}
+
 message AviationDataMessage {
   required string id = 1;
   required string accidentnumber = 2;
 }
 
-message AviationDatasMessage {
+message AviationDataMessages {
   repeated AviationDataMessage aviationdatamessage = 1;
 }

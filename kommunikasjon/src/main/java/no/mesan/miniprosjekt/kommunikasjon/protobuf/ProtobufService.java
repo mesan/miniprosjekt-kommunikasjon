@@ -16,16 +16,15 @@ import no.mesan.miniprosjekt.kommunikasjon.domain.Os;
 import no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessage;
 import no.mesan.miniprosjekt.kommunikasjon.protobuf.AircraftProto.AircraftMessages;
 import no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessage;
-import no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDatasMessage;
+import no.mesan.miniprosjekt.kommunikasjon.protobuf.AviationDataProto.AviationDataMessages;
 import no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage;
-import no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage;
+import no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages;
 
 import com.google.protobuf.ByteString;
 
 @Path("protobuf")
 public class ProtobufService {
 
-	
 	@GET
 	@Produces("application/x-protobuf")
 	@Path("aircrafts")
@@ -33,7 +32,7 @@ public class ProtobufService {
 		AircraftDao aircraftDao = new AircraftDao();
 		List<Aircraft> aircrafts = aircraftDao.getAircrafts();
 		AircraftMessages.Builder aircraftMessages = AircraftMessages.newBuilder();
-		
+
 		for (Aircraft aircraft : aircrafts) {
 			AircraftMessage.Builder aircraftMessage = AircraftMessage.newBuilder();
 			aircraftMessage.setDrawing(ByteString.copyFrom(aircraft.getDrawing()));
@@ -41,18 +40,18 @@ public class ProtobufService {
 			aircraftMessage.build();
 			aircraftMessages.addAircraftmessage(aircraftMessage);
 		}
-		
+
 		return Response.ok(aircraftMessages.build()).build();
 	}
-	
+
 	@GET
 	@Produces("application/x-protobuf")
 	@Path("aviationdata")
 	public Response getAviationData() {
 		AviationDataDao aviationDataDao = new AviationDataDao();
 		List<AviationData> aviationDatas = aviationDataDao.getAviationData();
-		AviationDatasMessage.Builder aviationDataMessages = AviationDatasMessage.newBuilder();
-		
+		AviationDataMessages.Builder aviationDataMessages = AviationDataMessages.newBuilder();
+
 		for (AviationData aviationData : aviationDatas) {
 			AviationDataMessage.Builder aviationDataMessage = AviationDataMessage.newBuilder();
 			aviationDataMessage.setId(aviationData.getId());
@@ -60,18 +59,18 @@ public class ProtobufService {
 			aviationDataMessage.build();
 			aviationDataMessages.addAviationdatamessage(aviationDataMessage);
 		}
-		
+
 		return Response.ok(aviationDataMessages.build()).build();
 	}
-	
+
 	@GET
 	@Produces("application/x-protobuf")
 	@Path("os")
 	public Response getOs() {
 		OsDao osDao = new OsDao();
 		List<Os> oss = osDao.getOss();
-		OssMessage.Builder ossMessage = OssMessage.newBuilder();
-		
+		OsMessages.Builder ossMessage = OsMessages.newBuilder();
+
 		for (Os os : oss) {
 			OsMessage.Builder osMessage = OsMessage.newBuilder();
 			osMessage.setName(os.getName());
@@ -79,7 +78,7 @@ public class ProtobufService {
 			osMessage.build();
 			ossMessage.addOsmessage(osMessage);
 		}
-		
+
 		return Response.ok(ossMessage.build()).build();
 	}
 }

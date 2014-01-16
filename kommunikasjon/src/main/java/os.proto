@@ -5,11 +5,15 @@ package protobuf;
 option java_package = "no.mesan.miniprosjekt.kommunikasjon.protobuf";
 option java_outer_classname = "OsProto";
 
+message Request {
+  required string request = 1;
+}
+
 message OsMessage {
   required string name = 1;
   required bytes system = 2;
 }
 
-message OssMessage {
+message OsMessages {
   repeated OsMessage osmessage = 1;
 }

@@ -8,194 +8,471 @@ public final class OsProto {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
-  public interface OsMessageOrBuilder
+  public interface RequestOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-
-    // required string name = 1;
-    /**
-     * <code>required string name = 1;</code>
-     */
-    boolean hasName();
-    /**
-     * <code>required string name = 1;</code>
-     */
-    java.lang.String getName();
-    /**
-     * <code>required string name = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    // required bytes system = 2;
-    /**
-     * <code>required bytes system = 2;</code>
-     */
-    boolean hasSystem();
-    /**
-     * <code>required bytes system = 2;</code>
-     */
-    com.google.protobuf.ByteString getSystem();
+    
+    // required string request = 1;
+    boolean hasRequest();
+    String getRequest();
   }
-  /**
-   * Protobuf type {@code protobuf.OsMessage}
-   */
-  public static final class OsMessage extends
+  public static final class Request extends
       com.google.protobuf.GeneratedMessage
-      implements OsMessageOrBuilder {
-    // Use OsMessage.newBuilder() to construct.
-    private OsMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements RequestOrBuilder {
+    // Use Request.newBuilder() to construct.
+    private Request(Builder builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private OsMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final OsMessage defaultInstance;
-    public static OsMessage getDefaultInstance() {
+    private Request(boolean noInit) {}
+    
+    private static final Request defaultInstance;
+    public static Request getDefaultInstance() {
       return defaultInstance;
     }
-
-    public OsMessage getDefaultInstanceForType() {
+    
+    public Request getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_Request_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_Request_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required string request = 1;
+    public static final int REQUEST_FIELD_NUMBER = 1;
+    private java.lang.Object request_;
+    public boolean hasRequest() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public String getRequest() {
+      java.lang.Object ref = request_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          request_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getRequestBytes() {
+      java.lang.Object ref = request_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        request_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      request_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasRequest()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getRequestBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getRequestBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
     }
-    private OsMessage(
-        com.google.protobuf.CodedInputStream input,
+    
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request parseFrom(
+        com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.RequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_Request_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_Request_fieldAccessorTable;
+      }
+      
+      // Construct using no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        request_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request.getDescriptor();
+      }
+      
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request getDefaultInstanceForType() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request.getDefaultInstance();
+      }
+      
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request build() {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request buildPartial() {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request result = new no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.request_ = request_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request) {
+          return mergeFrom((no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request other) {
+        if (other == no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request.getDefaultInstance()) return this;
+        if (other.hasRequest()) {
+          setRequest(other.getRequest());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasRequest()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
           int tag = input.readTag();
           switch (tag) {
             case 0:
-              done = true;
-              break;
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
             default: {
               if (!parseUnknownField(input, unknownFields,
                                      extensionRegistry, tag)) {
-                done = true;
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
               }
               break;
             }
             case 10: {
               bitField0_ |= 0x00000001;
-              name_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              bitField0_ |= 0x00000002;
-              system_ = input.readBytes();
+              request_ = input.readBytes();
               break;
             }
           }
         }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
       }
+      
+      private int bitField0_;
+      
+      // required string request = 1;
+      private java.lang.Object request_ = "";
+      public boolean hasRequest() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public String getRequest() {
+        java.lang.Object ref = request_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          request_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setRequest(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        request_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRequest() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        request_ = getDefaultInstance().getRequest();
+        onChanged();
+        return this;
+      }
+      void setRequest(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        request_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:protobuf.Request)
     }
+    
+    static {
+      defaultInstance = new Request(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:protobuf.Request)
+  }
+  
+  public interface OsMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required string name = 1;
+    boolean hasName();
+    String getName();
+    
+    // required bytes system = 2;
+    boolean hasSystem();
+    com.google.protobuf.ByteString getSystem();
+  }
+  public static final class OsMessage extends
+      com.google.protobuf.GeneratedMessage
+      implements OsMessageOrBuilder {
+    // Use OsMessage.newBuilder() to construct.
+    private OsMessage(Builder builder) {
+      super(builder);
+    }
+    private OsMessage(boolean noInit) {}
+    
+    private static final OsMessage defaultInstance;
+    public static OsMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public OsMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OsMessage_descriptor;
     }
-
+    
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OsMessage_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.class, no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.Builder.class);
+      return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OsMessage_fieldAccessorTable;
     }
-
-    public static com.google.protobuf.Parser<OsMessage> PARSER =
-        new com.google.protobuf.AbstractParser<OsMessage>() {
-      public OsMessage parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OsMessage(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<OsMessage> getParserForType() {
-      return PARSER;
-    }
-
+    
     private int bitField0_;
     // required string name = 1;
     public static final int NAME_FIELD_NUMBER = 1;
     private java.lang.Object name_;
-    /**
-     * <code>required string name = 1;</code>
-     */
     public boolean hasName() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    /**
-     * <code>required string name = 1;</code>
-     */
-    public java.lang.String getName() {
+    public String getName() {
       java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
+      if (ref instanceof String) {
+        return (String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
           name_ = s;
         }
         return s;
       }
     }
-    /**
-     * <code>required string name = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    private com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
+      if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
         name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
+    
     // required bytes system = 2;
     public static final int SYSTEM_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString system_;
-    /**
-     * <code>required bytes system = 2;</code>
-     */
     public boolean hasSystem() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    /**
-     * <code>required bytes system = 2;</code>
-     */
     public com.google.protobuf.ByteString getSystem() {
       return system_;
     }
-
+    
     private void initFields() {
       name_ = "";
       system_ = com.google.protobuf.ByteString.EMPTY;
@@ -204,7 +481,7 @@ public final class OsProto {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       if (!hasName()) {
         memoizedIsInitialized = 0;
         return false;
@@ -216,7 +493,7 @@ public final class OsProto {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -228,12 +505,12 @@ public final class OsProto {
       }
       getUnknownFields().writeTo(output);
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -247,83 +524,94 @@ public final class OsProto {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
+    
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
     public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
+    
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code protobuf.OsMessage}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessageOrBuilder {
@@ -331,21 +619,18 @@ public final class OsProto {
           getDescriptor() {
         return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OsMessage_descriptor;
       }
-
+      
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OsMessage_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.class, no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.Builder.class);
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OsMessage_fieldAccessorTable;
       }
-
+      
       // Construct using no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      
+      private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -356,7 +641,7 @@ public final class OsProto {
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -365,20 +650,20 @@ public final class OsProto {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OsMessage_descriptor;
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.getDescriptor();
       }
-
+      
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage getDefaultInstanceForType() {
         return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.getDefaultInstance();
       }
-
+      
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage build() {
         no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage result = buildPartial();
         if (!result.isInitialized()) {
@@ -386,7 +671,17 @@ public final class OsProto {
         }
         return result;
       }
-
+      
+      private no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage buildPartial() {
         no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage result = new no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage(this);
         int from_bitField0_ = bitField0_;
@@ -403,7 +698,7 @@ public final class OsProto {
         onBuilt();
         return result;
       }
-
+      
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage) {
           return mergeFrom((no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage)other);
@@ -412,13 +707,11 @@ public final class OsProto {
           return this;
         }
       }
-
+      
       public Builder mergeFrom(no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage other) {
         if (other == no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.getDefaultInstance()) return this;
         if (other.hasName()) {
-          bitField0_ |= 0x00000001;
-          name_ = other.name_;
-          onChanged();
+          setName(other.getName());
         }
         if (other.hasSystem()) {
           setSystem(other.getSystem());
@@ -426,7 +719,7 @@ public final class OsProto {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-
+      
       public final boolean isInitialized() {
         if (!hasName()) {
           
@@ -438,69 +731,62 @@ public final class OsProto {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              name_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              system_ = input.readBytes();
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // required string name = 1;
       private java.lang.Object name_ = "";
-      /**
-       * <code>required string name = 1;</code>
-       */
       public boolean hasName() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      /**
-       * <code>required string name = 1;</code>
-       */
-      public java.lang.String getName() {
+      public String getName() {
         java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
           name_ = s;
           return s;
         } else {
-          return (java.lang.String) ref;
+          return (String) ref;
         }
       }
-      /**
-       * <code>required string name = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>required string name = 1;</code>
-       */
-      public Builder setName(
-          java.lang.String value) {
+      public Builder setName(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -509,46 +795,26 @@ public final class OsProto {
         onChanged();
         return this;
       }
-      /**
-       * <code>required string name = 1;</code>
-       */
       public Builder clearName() {
         bitField0_ = (bitField0_ & ~0x00000001);
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
-      /**
-       * <code>required string name = 1;</code>
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+      void setName(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
         name_ = value;
         onChanged();
-        return this;
       }
-
+      
       // required bytes system = 2;
       private com.google.protobuf.ByteString system_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>required bytes system = 2;</code>
-       */
       public boolean hasSystem() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      /**
-       * <code>required bytes system = 2;</code>
-       */
       public com.google.protobuf.ByteString getSystem() {
         return system_;
       }
-      /**
-       * <code>required bytes system = 2;</code>
-       */
       public Builder setSystem(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
@@ -558,192 +824,86 @@ public final class OsProto {
         onChanged();
         return this;
       }
-      /**
-       * <code>required bytes system = 2;</code>
-       */
       public Builder clearSystem() {
         bitField0_ = (bitField0_ & ~0x00000002);
         system_ = getDefaultInstance().getSystem();
         onChanged();
         return this;
       }
-
+      
       // @@protoc_insertion_point(builder_scope:protobuf.OsMessage)
     }
-
+    
     static {
       defaultInstance = new OsMessage(true);
       defaultInstance.initFields();
     }
-
+    
     // @@protoc_insertion_point(class_scope:protobuf.OsMessage)
   }
-
-  public interface OssMessageOrBuilder
+  
+  public interface OsMessagesOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-
+    
     // repeated .protobuf.OsMessage osmessage = 1;
-    /**
-     * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-     */
     java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage> 
         getOsmessageList();
-    /**
-     * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-     */
     no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage getOsmessage(int index);
-    /**
-     * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-     */
     int getOsmessageCount();
-    /**
-     * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-     */
     java.util.List<? extends no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessageOrBuilder> 
         getOsmessageOrBuilderList();
-    /**
-     * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-     */
     no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessageOrBuilder getOsmessageOrBuilder(
         int index);
   }
-  /**
-   * Protobuf type {@code protobuf.OssMessage}
-   */
-  public static final class OssMessage extends
+  public static final class OsMessages extends
       com.google.protobuf.GeneratedMessage
-      implements OssMessageOrBuilder {
-    // Use OssMessage.newBuilder() to construct.
-    private OssMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements OsMessagesOrBuilder {
+    // Use OsMessages.newBuilder() to construct.
+    private OsMessages(Builder builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private OssMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final OssMessage defaultInstance;
-    public static OssMessage getDefaultInstance() {
+    private OsMessages(boolean noInit) {}
+    
+    private static final OsMessages defaultInstance;
+    public static OsMessages getDefaultInstance() {
       return defaultInstance;
     }
-
-    public OssMessage getDefaultInstanceForType() {
+    
+    public OsMessages getDefaultInstanceForType() {
       return defaultInstance;
     }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private OssMessage(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                osmessage_ = new java.util.ArrayList<no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              osmessage_.add(input.readMessage(no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.PARSER, extensionRegistry));
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          osmessage_ = java.util.Collections.unmodifiableList(osmessage_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
+    
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OssMessage_descriptor;
+      return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OsMessages_descriptor;
     }
-
+    
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OssMessage_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage.class, no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage.Builder.class);
+      return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OsMessages_fieldAccessorTable;
     }
-
-    public static com.google.protobuf.Parser<OssMessage> PARSER =
-        new com.google.protobuf.AbstractParser<OssMessage>() {
-      public OssMessage parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OssMessage(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<OssMessage> getParserForType() {
-      return PARSER;
-    }
-
+    
     // repeated .protobuf.OsMessage osmessage = 1;
     public static final int OSMESSAGE_FIELD_NUMBER = 1;
     private java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage> osmessage_;
-    /**
-     * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-     */
     public java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage> getOsmessageList() {
       return osmessage_;
     }
-    /**
-     * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-     */
     public java.util.List<? extends no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessageOrBuilder> 
         getOsmessageOrBuilderList() {
       return osmessage_;
     }
-    /**
-     * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-     */
     public int getOsmessageCount() {
       return osmessage_.size();
     }
-    /**
-     * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-     */
     public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage getOsmessage(int index) {
       return osmessage_.get(index);
     }
-    /**
-     * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-     */
     public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessageOrBuilder getOsmessageOrBuilder(
         int index) {
       return osmessage_.get(index);
     }
-
+    
     private void initFields() {
       osmessage_ = java.util.Collections.emptyList();
     }
@@ -751,7 +911,7 @@ public final class OsProto {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-
+      
       for (int i = 0; i < getOsmessageCount(); i++) {
         if (!getOsmessage(i).isInitialized()) {
           memoizedIsInitialized = 0;
@@ -761,7 +921,7 @@ public final class OsProto {
       memoizedIsInitialized = 1;
       return true;
     }
-
+    
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -770,12 +930,12 @@ public final class OsProto {
       }
       getUnknownFields().writeTo(output);
     }
-
+    
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-
+    
       size = 0;
       for (int i = 0; i < osmessage_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -785,105 +945,113 @@ public final class OsProto {
       memoizedSerializedSize = size;
       return size;
     }
-
+    
     private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected java.lang.Object writeReplace()
         throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-
-    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage parseFrom(
+    
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
-    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage parseFrom(
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
-    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage parseFrom(byte[] data)
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
+      return newBuilder().mergeFrom(data).buildParsed();
     }
-    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage parseFrom(
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
     }
-    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage parseFrom(java.io.InputStream input)
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
-    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage parseFrom(
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage parseDelimitedFrom(java.io.InputStream input)
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
-    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage parseDelimitedFrom(
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
     }
-    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage parseFrom(
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return newBuilder().mergeFrom(input).buildParsed();
     }
-    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage parseFrom(
+    public static no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
     }
-
+    
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage prototype) {
+    public static Builder newBuilder(no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-
+    
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
-    /**
-     * Protobuf type {@code protobuf.OssMessage}
-     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessageOrBuilder {
+       implements no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessagesOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OssMessage_descriptor;
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OsMessages_descriptor;
       }
-
+      
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OssMessage_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage.class, no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage.Builder.class);
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OsMessages_fieldAccessorTable;
       }
-
-      // Construct using no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage.newBuilder()
+      
+      // Construct using no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      
+      private Builder(BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -895,7 +1063,7 @@ public final class OsProto {
       private static Builder create() {
         return new Builder();
       }
-
+      
       public Builder clear() {
         super.clear();
         if (osmessageBuilder_ == null) {
@@ -906,30 +1074,40 @@ public final class OsProto {
         }
         return this;
       }
-
+      
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-
+      
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.internal_static_protobuf_OssMessage_descriptor;
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages.getDescriptor();
       }
-
-      public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage getDefaultInstanceForType() {
-        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage.getDefaultInstance();
+      
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages getDefaultInstanceForType() {
+        return no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages.getDefaultInstance();
       }
-
-      public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage build() {
-        no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage result = buildPartial();
+      
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages build() {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
-
-      public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage buildPartial() {
-        no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage result = new no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage(this);
+      
+      private no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages buildPartial() {
+        no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages result = new no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages(this);
         int from_bitField0_ = bitField0_;
         if (osmessageBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -943,18 +1121,18 @@ public final class OsProto {
         onBuilt();
         return result;
       }
-
+      
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage) {
-          return mergeFrom((no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage)other);
+        if (other instanceof no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages) {
+          return mergeFrom((no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
-
-      public Builder mergeFrom(no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage other) {
-        if (other == no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage.getDefaultInstance()) return this;
+      
+      public Builder mergeFrom(no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages other) {
+        if (other == no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages.getDefaultInstance()) return this;
         if (osmessageBuilder_ == null) {
           if (!other.osmessage_.isEmpty()) {
             if (osmessage_.isEmpty()) {
@@ -984,7 +1162,7 @@ public final class OsProto {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-
+      
       public final boolean isInitialized() {
         for (int i = 0; i < getOsmessageCount(); i++) {
           if (!getOsmessage(i).isInitialized()) {
@@ -994,26 +1172,42 @@ public final class OsProto {
         }
         return true;
       }
-
+      
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OssMessage) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.Builder subBuilder = no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addOsmessage(subBuilder.buildPartial());
+              break;
+            }
           }
         }
-        return this;
       }
+      
       private int bitField0_;
-
+      
       // repeated .protobuf.OsMessage osmessage = 1;
       private java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage> osmessage_ =
         java.util.Collections.emptyList();
@@ -1023,13 +1217,10 @@ public final class OsProto {
           bitField0_ |= 0x00000001;
          }
       }
-
+      
       private com.google.protobuf.RepeatedFieldBuilder<
           no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage, no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.Builder, no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessageOrBuilder> osmessageBuilder_;
-
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
+      
       public java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage> getOsmessageList() {
         if (osmessageBuilder_ == null) {
           return java.util.Collections.unmodifiableList(osmessage_);
@@ -1037,9 +1228,6 @@ public final class OsProto {
           return osmessageBuilder_.getMessageList();
         }
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public int getOsmessageCount() {
         if (osmessageBuilder_ == null) {
           return osmessage_.size();
@@ -1047,9 +1235,6 @@ public final class OsProto {
           return osmessageBuilder_.getCount();
         }
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage getOsmessage(int index) {
         if (osmessageBuilder_ == null) {
           return osmessage_.get(index);
@@ -1057,9 +1242,6 @@ public final class OsProto {
           return osmessageBuilder_.getMessage(index);
         }
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public Builder setOsmessage(
           int index, no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage value) {
         if (osmessageBuilder_ == null) {
@@ -1074,9 +1256,6 @@ public final class OsProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public Builder setOsmessage(
           int index, no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.Builder builderForValue) {
         if (osmessageBuilder_ == null) {
@@ -1088,9 +1267,6 @@ public final class OsProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public Builder addOsmessage(no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage value) {
         if (osmessageBuilder_ == null) {
           if (value == null) {
@@ -1104,9 +1280,6 @@ public final class OsProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public Builder addOsmessage(
           int index, no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage value) {
         if (osmessageBuilder_ == null) {
@@ -1121,9 +1294,6 @@ public final class OsProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public Builder addOsmessage(
           no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.Builder builderForValue) {
         if (osmessageBuilder_ == null) {
@@ -1135,9 +1305,6 @@ public final class OsProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public Builder addOsmessage(
           int index, no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.Builder builderForValue) {
         if (osmessageBuilder_ == null) {
@@ -1149,9 +1316,6 @@ public final class OsProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public Builder addAllOsmessage(
           java.lang.Iterable<? extends no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage> values) {
         if (osmessageBuilder_ == null) {
@@ -1163,9 +1327,6 @@ public final class OsProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public Builder clearOsmessage() {
         if (osmessageBuilder_ == null) {
           osmessage_ = java.util.Collections.emptyList();
@@ -1176,9 +1337,6 @@ public final class OsProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public Builder removeOsmessage(int index) {
         if (osmessageBuilder_ == null) {
           ensureOsmessageIsMutable();
@@ -1189,16 +1347,10 @@ public final class OsProto {
         }
         return this;
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.Builder getOsmessageBuilder(
           int index) {
         return getOsmessageFieldBuilder().getBuilder(index);
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessageOrBuilder getOsmessageOrBuilder(
           int index) {
         if (osmessageBuilder_ == null) {
@@ -1206,9 +1358,6 @@ public final class OsProto {
           return osmessageBuilder_.getMessageOrBuilder(index);
         }
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public java.util.List<? extends no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessageOrBuilder> 
            getOsmessageOrBuilderList() {
         if (osmessageBuilder_ != null) {
@@ -1217,24 +1366,15 @@ public final class OsProto {
           return java.util.Collections.unmodifiableList(osmessage_);
         }
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.Builder addOsmessageBuilder() {
         return getOsmessageFieldBuilder().addBuilder(
             no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.getDefaultInstance());
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.Builder addOsmessageBuilder(
           int index) {
         return getOsmessageFieldBuilder().addBuilder(
             index, no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.getDefaultInstance());
       }
-      /**
-       * <code>repeated .protobuf.OsMessage osmessage = 1;</code>
-       */
       public java.util.List<no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.Builder> 
            getOsmessageBuilderList() {
         return getOsmessageFieldBuilder().getBuilderList();
@@ -1253,29 +1393,34 @@ public final class OsProto {
         }
         return osmessageBuilder_;
       }
-
-      // @@protoc_insertion_point(builder_scope:protobuf.OssMessage)
+      
+      // @@protoc_insertion_point(builder_scope:protobuf.OsMessages)
     }
-
+    
     static {
-      defaultInstance = new OssMessage(true);
+      defaultInstance = new OsMessages(true);
       defaultInstance.initFields();
     }
-
-    // @@protoc_insertion_point(class_scope:protobuf.OssMessage)
+    
+    // @@protoc_insertion_point(class_scope:protobuf.OsMessages)
   }
-
+  
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_protobuf_Request_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_protobuf_Request_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_protobuf_OsMessage_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_protobuf_OsMessage_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_protobuf_OssMessage_descriptor;
+    internal_static_protobuf_OsMessages_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_protobuf_OssMessage_fieldAccessorTable;
-
+      internal_static_protobuf_OsMessages_fieldAccessorTable;
+  
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
@@ -1284,29 +1429,42 @@ public final class OsProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\010os.proto\022\010protobuf\")\n\tOsMessage\022\014\n\004nam" +
-      "e\030\001 \002(\t\022\016\n\006system\030\002 \002(\014\"4\n\nOssMessage\022&\n" +
-      "\tosmessage\030\001 \003(\0132\023.protobuf.OsMessageB7\n" +
-      ",no.mesan.miniprosjekt.kommunikasjon.pro" +
-      "tobufB\007OsProto"
+      "\n\010os.proto\022\010protobuf\"\032\n\007Request\022\017\n\007reque" +
+      "st\030\001 \002(\t\")\n\tOsMessage\022\014\n\004name\030\001 \002(\t\022\016\n\006s" +
+      "ystem\030\002 \002(\014\"4\n\nOsMessages\022&\n\tosmessage\030\001" +
+      " \003(\0132\023.protobuf.OsMessageB7\n,no.mesan.mi" +
+      "niprosjekt.kommunikasjon.protobufB\007OsPro" +
+      "to"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
             com.google.protobuf.Descriptors.FileDescriptor root) {
           descriptor = root;
-          internal_static_protobuf_OsMessage_descriptor =
+          internal_static_protobuf_Request_descriptor =
             getDescriptor().getMessageTypes().get(0);
+          internal_static_protobuf_Request_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_protobuf_Request_descriptor,
+              new java.lang.String[] { "Request", },
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request.class,
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.Request.Builder.class);
+          internal_static_protobuf_OsMessage_descriptor =
+            getDescriptor().getMessageTypes().get(1);
           internal_static_protobuf_OsMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_protobuf_OsMessage_descriptor,
-              new java.lang.String[] { "Name", "System", });
-          internal_static_protobuf_OssMessage_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-          internal_static_protobuf_OssMessage_fieldAccessorTable = new
+              new java.lang.String[] { "Name", "System", },
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.class,
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessage.Builder.class);
+          internal_static_protobuf_OsMessages_descriptor =
+            getDescriptor().getMessageTypes().get(2);
+          internal_static_protobuf_OsMessages_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_protobuf_OssMessage_descriptor,
-              new java.lang.String[] { "Osmessage", });
+              internal_static_protobuf_OsMessages_descriptor,
+              new java.lang.String[] { "Osmessage", },
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages.class,
+              no.mesan.miniprosjekt.kommunikasjon.protobuf.OsProto.OsMessages.Builder.class);
           return null;
         }
       };
@@ -1315,6 +1473,6 @@ public final class OsProto {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
   }
-
+  
   // @@protoc_insertion_point(outer_class_scope)
 }
