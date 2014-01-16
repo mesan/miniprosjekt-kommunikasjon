@@ -18,7 +18,7 @@ public class AvroClientApp {
 			InterruptedException {
 
 		NettyTransceiver client = new NettyTransceiver(new InetSocketAddress(
-				"192.168.0.188", 65111));
+				"127.0.0.1", 65111));
 
 		AvroProtocol proxy = (AvroProtocol) SpecificRequestor.getClient(
 				AvroProtocol.class, client);

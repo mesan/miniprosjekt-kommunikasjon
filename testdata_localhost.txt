@@ -1,0 +1,49 @@
+PROTOBUF - RPC
+AIRCRAFTS
+Time: 564
+size: 3
+AVIATIONDATA
+Time: 1348
+size: 74149
+OS
+Time: 1337
+size: 1
+
+PROTOBUF - REST
+Tid totalt 3276 ms
+Gjennomsnitt os: 1304.0
+Gjennomsnitt aviation data: 1052.0
+Gjennomsnitt aircrafts: 920.0
+
+JSON - REST
+Tid totalt 3371 ms
+Gjennomsnitt os: 2614.0
+Gjennomsnitt aviation data: 683.0
+Gjennomsnitt aircrafts: 74.0
+
+MSGPACK
+AIRCRAFTS
+Time: 280
+size: 3
+AVIATIONDATA
+Time: 857
+size: 74149
+OS
+Time: 24389
+
+THRIFT
+OS: 906ms
+Aircrafts: 33ms
+AviationData: 758ms
+
+AVRO
+Aircrafts
+Time: 502
+size: 719348
+AviationData
+Time: 995
+size: 74149
+OS
+Time: 1786
+size: 75086320
+

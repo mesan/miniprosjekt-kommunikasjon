@@ -24,7 +24,7 @@ public class ThriftServiceClient {
 			
 			TTransport transport;
 
-			transport = new TSocket("192.168.0.188", 9090);
+			transport = new TSocket("127.0.0.1", 9090);
 			transport.open();
 
 			TProtocol protocol = new TBinaryProtocol(transport);
