@@ -10,7 +10,7 @@ import no.mesan.miniprosjekt.kommunikasjon.domain.AviationDataDto;
 import no.mesan.miniprosjekt.kommunikasjon.domain.OsDto;
 
 @WebService
-@SOAPBinding(style = Style.DOCUMENT)
+@SOAPBinding(style = Style.RPC)
 public interface SoapService {
 	@WebMethod AviationDataDto getAviationData();
 	@WebMethod AircraftDto getAircrafts();

@@ -1,0 +1,33 @@
+res:  WPR12LA097 
+AviationData: 3554ms
+res: 719348
+Aircrafts: 988ms
+res: 75086320
+Os: 30006ms
+res:  WPR12LA097 
+AviationData: 2529ms
+res: 719348
+Aircrafts: 2375ms
+res: 75086320
+Os: 30574ms
+res:  WPR12LA097 
+AviationData: 2702ms
+res: 719348
+Aircrafts: 904ms
+res: 75086320
+Os: 29326ms
+res:  WPR12LA097 
+AviationData: 2767ms
+res: 719348
+Aircrafts: 953ms
+res: 75086320
+Os: 31525ms
+res:  WPR12LA097 
+AviationData: 3107ms
+res: 719348
+Aircrafts: 1127ms
+res: 75086320
+Os: 29995ms
+gjennomsnitt AviationData: 2931.8ms
+gjennomsnitt Aircrafts: 1269.4ms
+gjennomsnitt Os: 30285.2ms
