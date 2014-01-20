@@ -13,13 +13,12 @@ import org.msgpack.rpc.loop.EventLoop;
 public class MsgPackClient {
 
 	public static interface RPCInterface {
-		String hello(String msg, int a, boolean test);
 
-		byte[] getAircrafts();
+		byte[] getAircrafts() throws IOException;
 
-		byte[] getOss();
+		byte[] getOss() throws IOException;
 
-		byte[] getAviationData();
+		byte[] getAviationData() throws IOException;
 	}
 
 	public static void main(String[] args) throws Exception {
