@@ -17,7 +17,7 @@ public class JsonClient {
  
 	private final String USER_AGENT = "Mozilla/5.0";
 	
-	private final static double NUMBER_OF_ITERATIONS = 1.0;
+	private final static double NUMBER_OF_ITERATIONS = 5.0;
 	public static void main(String[] args) throws Exception {
  
 		JsonClient jsonClient = new JsonClient();
@@ -31,22 +31,23 @@ public class JsonClient {
 			jsonClient.getOss();
 			long os_end = System.currentTimeMillis();
 			long os_time = os_end - os_start;
+			
 			os_sum += os_time;
-			//System.out.println("Tid os = " + os_time + " ms");
+			System.out.println("Tid os kjøring" + (i+1) + ":" + os_time + " ms");
 			
 			long aircrafts_start = System.currentTimeMillis();
 			jsonClient.getAircrafts();
 			long aircrafts_end = System.currentTimeMillis();
 			long aircrafts_time = aircrafts_end-aircrafts_start;
 			aircrafts_sum += aircrafts_time;
-			//System.out.println("Tid aircrafts = " + aircrafts_time + " ms");
+			System.out.println("Tid aircrafts kjøring " + (i+1) + ":" + aircrafts_time + " ms");
 			
 			long aviationdata_start = System.currentTimeMillis();
 			jsonClient.getAviationData();
 			long aviationdata_end = System.currentTimeMillis();
 			long aviationdata_time = aviationdata_end-aviationdata_start;
 			aviationdata_sum += aviationdata_time;
-			//System.out.println("Tid aviation data = " + aviationdata_time + " ms");
+			System.out.println("Tid aviation data kjøring " + (i+1) + ":" + aviationdata_time + " ms");
 		}
 		long total_end = System.currentTimeMillis();
 		double os_average = os_sum/NUMBER_OF_ITERATIONS;
@@ -67,7 +68,7 @@ public class JsonClient {
 	// HTTP GET request
 	private void getAircrafts() throws Exception {
  
-		String url = "http://127.0.0.1:8080/json/aircrafts";
+		String url = "http://82.164.205.67:8080/json/aircrafts";
  
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
@@ -87,7 +88,7 @@ public class JsonClient {
 	
 	private void getAviationData() throws Exception {
 		 
-		String url = "http://127.0.0.1:8080/json/aviationdata";
+		String url = "http://82.164.205.67:8080/json/aviationdata";
  
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
@@ -106,7 +107,7 @@ public class JsonClient {
 	}
 	
 	private void getOss() throws Exception {
-		String url = "http://127.0.0.1:8080/json/os";
+		String url = "http://82.164.205.67:8080/json/os";
 		 
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);

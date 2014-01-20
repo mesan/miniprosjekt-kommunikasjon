@@ -1,0 +1,34 @@
+Size os json = 100115147
+Tid os kjøring1:35456 ms
+Size aircrafts json = 3013749
+Tid aircrafts kjøring 1:1352 ms
+Size aviationdata json = 4228639
+Tid aviation data kjøring 1:1699 ms
+Size os json = 100115147
+Tid os kjøring2:36899 ms
+Size aircrafts json = 3013749
+Tid aircrafts kjøring 2:1086 ms
+Size aviationdata json = 4228639
+Tid aviation data kjøring 2:1961 ms
+Size os json = 100115147
+Tid os kjøring3:33774 ms
+Size aircrafts json = 3013749
+Tid aircrafts kjøring 3:1183 ms
+Size aviationdata json = 4228639
+Tid aviation data kjøring 3:1628 ms
+Size os json = 100115147
+Tid os kjøring4:32777 ms
+Size aircrafts json = 3013749
+Tid aircrafts kjøring 4:1099 ms
+Size aviationdata json = 4228639
+Tid aviation data kjøring 4:1919 ms
+Size os json = 100115147
+Tid os kjøring5:33687 ms
+Size aircrafts json = 3013749
+Tid aircrafts kjøring 5:1177 ms
+Size aviationdata json = 4228639
+Tid aviation data kjøring 5:1833 ms
+Tid totalt 187530 ms
+Gjennomsnitt os: 34518.6
+Gjennomsnitt aviation data: 1808.0
+Gjennomsnitt aircrafts: 1179.4

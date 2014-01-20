@@ -1,0 +1,19 @@
+Tid aircrafts kjøring 1:1666 ms
+Tid aviation data kjøring 1:1981 ms
+Tid os kjøring1:34503 ms
+Tid aircrafts kjøring 2:1001 ms
+Tid aviation data kjøring 2:1715 ms
+Tid os kjøring2:38846 ms
+Tid aircrafts kjøring 3:1474 ms
+Tid aviation data kjøring 3:1827 ms
+Tid os kjøring3:36765 ms
+Tid aircrafts kjøring 4:1171 ms
+Tid aviation data kjøring 4:2038 ms
+Tid os kjøring4:43345 ms
+Tid aircrafts kjøring 5:989 ms
+Tid aviation data kjøring 5:1456 ms
+Tid os kjøring5:32261 ms
+Tid totalt 201039 ms
+Gjennomsnitt os: 37144.0
+Gjennomsnitt aviation data: 1803.4
+Gjennomsnitt aircrafts: 1260.2

@@ -1,0 +1,18 @@
+Aircrafts kjøring 1: 798
+AviationData kjøring 1: 1208
+Os kjøring 1: 23771
+Aircrafts kjøring 2: 627
+AviationData kjøring 2: 1211
+Os kjøring 2: 20928
+Aircrafts kjøring 3: 760
+AviationData kjøring 3: 959
+Os kjøring 3: 21034
+Aircrafts kjøring 4: 633
+AviationData kjøring 4: 947
+Os kjøring 4: 20770
+Aircrafts kjøring 5: 619
+AviationData kjøring 5: 952
+Os kjøring 5: 20674
+Aircrafts gjennomsnitt: 687.4
+AviationData gjennomsnitt: 1055.4
+Os gjennomsnitt: 21435.4

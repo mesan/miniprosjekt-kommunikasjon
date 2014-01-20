@@ -13,7 +13,7 @@ public class ProtobufClient {
 
 	private final String USER_AGENT = "Mozilla/5.0";
 
-	private final static double NUMBER_OF_ITERATIONS = 1.0;
+	private final static double NUMBER_OF_ITERATIONS = 5.0;
 	
 	public static void main(String[] args) throws Exception {
 
@@ -26,23 +26,23 @@ public class ProtobufClient {
 			long start_aircrafts = System.currentTimeMillis();
 			protobufClient.getAircrafts();
 			long end_aircrafts = System.currentTimeMillis();
-			long time_aircrafts = end_aircrafts - start_aircrafts;
-//			System.out.println("Tid aircrafts = " + time_aircrafts + " ms");
-			aircrafts_sum += time_aircrafts;
+			long aircrafts_time = end_aircrafts - start_aircrafts;
+			System.out.println("Tid aircrafts kjøring " + (i+1) + ":" + aircrafts_time + " ms");
+			aircrafts_sum += aircrafts_time;
 			
 			long start_aviationdata = System.currentTimeMillis();
 			protobufClient.getAviationData();
 			long end_aviationdata = System.currentTimeMillis();
-			long time_aviationdata = end_aviationdata - start_aviationdata;
-//			System.out.println("Tid aviation data = " + time_aviationdata + " ms");
-			aviationdata_sum += time_aviationdata;
+			long aviationdata_time = end_aviationdata - start_aviationdata;
+			System.out.println("Tid aviation data kjøring " + (i+1) + ":" + aviationdata_time + " ms");
+			aviationdata_sum += aviationdata_time;
 			
 			long start_os = System.currentTimeMillis();
 			protobufClient.getOss();
 			long end_os = System.currentTimeMillis();
-			long time_os = end_os - start_os;
-			os_sum += time_os;
-//			System.out.println("Tid os = " + time_os + " ms");
+			long os_time = end_os - start_os;
+			os_sum += os_time;
+			System.out.println("Tid os kjøring" + (i+1) + ":" + os_time + " ms");
 		}
 		long total_end = System.currentTimeMillis();
 		double os_average = os_sum/NUMBER_OF_ITERATIONS;
@@ -61,7 +61,7 @@ public class ProtobufClient {
 
 	private void getAviationData() throws Exception {
 
-		String url = "http://127.0.0.1:8080/protobuf/aviationdata";
+		String url = "http://82.164.205.67:8080/protobuf/aviationdata";
 
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
@@ -95,7 +95,7 @@ public class ProtobufClient {
 	// HTTP GET request
 	private void getAircrafts() throws Exception {
 
-		String url = "http://127.0.0.1:8080/protobuf/aircrafts";
+		String url = "http://82.164.205.67:8080/protobuf/aircrafts";
 
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
@@ -127,7 +127,7 @@ public class ProtobufClient {
 	
 	private void getOss() throws Exception {
 
-		String url = "http://127.0.0.1:8080/protobuf/os";
+		String url = "http://82.164.205.67:8080/protobuf/os";
 
 		HttpClient client = new DefaultHttpClient();
 		HttpGet request = new HttpGet(url);
@@ -140,7 +140,7 @@ public class ProtobufClient {
 
 		OsMessages ossMessages = OsMessages.newBuilder()
 				.mergeFrom(response.getEntity().getContent()).build();
-		System.out.println("Size os protobuf = " + ossMessages.getSerializedSize());
+		//System.out.println("Size os protobuf = " + ossMessages.getSerializedSize());
 	}
 
 }

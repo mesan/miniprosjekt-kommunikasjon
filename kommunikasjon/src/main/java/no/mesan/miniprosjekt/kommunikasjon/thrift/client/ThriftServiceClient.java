@@ -17,14 +17,14 @@ public class ThriftServiceClient {
 
 	public static void main(String[] args) {
 
-		int antallKjoeringer = 1;
+		int antallKjoeringer = 5;
 		
 		try {
 			long startAll = System.currentTimeMillis();
 			
 			TTransport transport;
 
-			transport = new TSocket("127.0.0.1", 9090);
+			transport = new TSocket("82.164.205.67", 9090);
 			transport.open();
 
 			TProtocol protocol = new TBinaryProtocol(transport);
@@ -35,31 +35,42 @@ public class ThriftServiceClient {
 			long aviationDataTime = 0;
 			long totalTime = 0;
 			
+			long osSingleRunTime = 0;
+			long aircraftSingleRunTime = 0;
+			long aviationDataSingleRunTime = 0;
+			
 			for (int i = 0; i < antallKjoeringer; i++) {
 				long start = System.currentTimeMillis();
 
 				List<OsThrift> os = client.getOs();
-				osTime += (System.currentTimeMillis() - start);
+				osSingleRunTime = System.currentTimeMillis() - start;
+				System.out.println("Tid os kjøring " + (i+1) + ": " + osSingleRunTime);
+				osTime += osSingleRunTime;
 
 				start = System.currentTimeMillis();
+				
 				List<AircraftThrift> aircrafts = client.getAircraft();
-				aircraftTime += (System.currentTimeMillis() - start);
+				aircraftSingleRunTime = System.currentTimeMillis() - start;
+				System.out.println("Tid aircrafts kjøring " + (i+1) + ": " + aircraftSingleRunTime);
+				aircraftTime += aircraftSingleRunTime;
 
 				start = System.currentTimeMillis();
 				List<AviationDataThrift> aviationData = client
 						.getAviationData();
-				aviationDataTime += (System.currentTimeMillis() - start);
+				aviationDataSingleRunTime = System.currentTimeMillis() - start;
+				System.out.println("Tid aviation data kjøring " + (i+1) + ": " + aviationDataSingleRunTime);
+				aviationDataTime += aviationDataSingleRunTime;
 
 				long endAll = System.currentTimeMillis();
 				totalTime += endAll - startAll;
 				
 			}
 			transport.close();
-			System.out.println("OS: "
+			System.out.println("Gjennomsnitt OS: "
 					+ osTime/antallKjoeringer + "ms");
-			System.out.println("Aircrafts: "
+			System.out.println("Gjennomsnitt Aircrafts: "
 					+ aircraftTime/antallKjoeringer + "ms");
-			System.out.println("AviationData: "
+			System.out.println("Gjennomsnitt AviationData: "
 					+ aviationDataTime/antallKjoeringer + "ms");
 			System.out.println("\nTotal: " + totalTime/antallKjoeringer + "ms");
 		} catch (TTransportException e) {

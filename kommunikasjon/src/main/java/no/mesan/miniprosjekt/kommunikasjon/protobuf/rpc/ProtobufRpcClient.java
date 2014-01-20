@@ -1,5 +1,7 @@
 package no.mesan.miniprosjekt.kommunikasjon.protobuf.rpc;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -20,25 +22,53 @@ import com.googlecode.protobuf.socketrpc.SocketRpcController;
 
 public class ProtobufRpcClient {
 
+	static long antallKjoringer = 5;
+	static long startAircrafts = 0;
+	static long startAviationData = 0;
+	static long kjoring = 1;
+	static long totalAircraftsTime = 0;
+	static long totalAviationDataTime = 0;
+	static long singleAircraftsTime = 0;		
+	static long singleAviationDataTime = 0;
+	
+	//static List<Long> aircraftsKjoringer = new ArrayList<>();
+	//static List<Long> aviationDataKjoringer = new ArrayList<>();
+	
+	static RpcChannel channel = null;
+	
 	public static void main(String[] args) {
 		// Create a thread pool
 		ExecutorService threadPool = Executors.newFixedThreadPool(1);
 
 		// Create channel
-		String host = "127.0.0.1";
+		String host = "82.164.205.67";
 		int port = 4446;
 		RpcConnectionFactory connectionFactory = SocketRpcConnectionFactories.createRpcConnectionFactory(host, port);
-		RpcChannel channel = RpcChannels.newRpcChannel(connectionFactory, threadPool);
+		channel = RpcChannels.newRpcChannel(connectionFactory, threadPool);
+		
+		double antallKjoringer = 5.0;
 
+		
 		// Call service
+		
 		getAircrafts(channel);
-		getAviationDatas(channel);
-		getOss(channel);
+		
+			
+			/*start = System.currentTimeMillis();
+			getOss(channel);
+			singleOsTime = System.currentTimeMillis() - start;
+			totalOsTime += singleOsTime;
+			System.out.println("Os kjøring " + (i + 1) + ": " + singleOsTime);*/
+		
+		
+		
+		//System.out.println("Os gjennomsnitt: " + totalOsTime/antallKjoringer);
 	}
 	
 	private static void getAircrafts(RpcChannel channel) {
 		// Deserialize
-		final long start = System.currentTimeMillis();
+		//final long start = System.currentTimeMillis();
+		startAircrafts = System.currentTimeMillis();
 		AircraftProtoService.GetAircraftService.Stub myService = AircraftProtoService.GetAircraftService.newStub(channel);
 		RpcController controller = new SocketRpcController();
 		
@@ -49,9 +79,21 @@ public class ProtobufRpcClient {
 		myService.getAircrafts(controller, build, new RpcCallback<AircraftProto.AircraftMessages>() {
 			public void run(AircraftProto.AircraftMessages aircraftMessages) {
 
-				System.out.println("AIRCRAFTS");
-				System.out.println("Time: " + (System.currentTimeMillis() - start));
-				System.out.println("size: " + aircraftMessages.getAircraftmessageCount());
+				/*System.out.println("AIRCRAFTS");
+				System.out.println("Time: " + (System.currentTimeMillis() - start));*/
+				/*int size = 0;
+				int count = aircraftMessages.getAircraftmessageCount();
+				for (int i = 0; i < count; i++) {
+					size += aircraftMessages.getAircraftmessage(i).getSerializedSize();
+				}
+				System.out.println(size);*/
+				
+				long singleAircraftsTime = System.currentTimeMillis() - startAircrafts;
+				totalAircraftsTime += singleAircraftsTime;
+				System.out.println("Aircrafts kjøring " + (kjoring) + ": " + singleAircraftsTime);
+				//aircraftsKjoringer.add(singleAircraftsTime);
+				
+				getAviationDatas(ProtobufRpcClient.channel);
 			}
 		});
 		
@@ -63,7 +105,8 @@ public class ProtobufRpcClient {
 	
 	private static void getAviationDatas(RpcChannel channel) {
 		// Deserialize
-		final long start = System.currentTimeMillis();
+		//final long start = System.currentTimeMillis();
+		startAviationData = System.currentTimeMillis();
 		AviationDataProtoService.GetAviationDataService.Stub myService = AviationDataProtoService.GetAviationDataService.newStub(channel);
 		RpcController controller = new SocketRpcController();
 		
@@ -74,9 +117,20 @@ public class ProtobufRpcClient {
 		myService.getAviationData(controller, build, new RpcCallback<AviationDataProto.AviationDataMessages>() {
 			public void run(AviationDataProto.AviationDataMessages aviationDataMessages) {
 
-				System.out.println("AVIATIONDATA");
-				System.out.println("Time: " + (System.currentTimeMillis() - start));
-				System.out.println("size: " + aviationDataMessages.getAviationdatamessageCount());
+				
+				singleAviationDataTime = System.currentTimeMillis() - startAviationData;
+				totalAviationDataTime += singleAviationDataTime;
+				System.out.println("AviationData kjøring " + (kjoring++) + ": " + singleAviationDataTime);
+				//aviationDataKjoringer.add(singleAviationDataTime);
+				/*System.out.println("AVIATIONDATA");
+				System.out.println("Time: " + (System.currentTimeMillis() - start));*/
+				//aviationDataMessages.getAviationdatamessageCount();
+				if (kjoring <= 5)
+					getAircrafts(ProtobufRpcClient.channel);
+				else {
+					System.out.println("Aircrafts gjennomsnitt: " + totalAircraftsTime/antallKjoringer);
+					System.out.println("AviationData gjennomsnitt: " + totalAviationDataTime/antallKjoringer);
+				}
 			}
 		});
 		
@@ -88,7 +142,7 @@ public class ProtobufRpcClient {
 	
 	private static void getOss(RpcChannel channel) {
 		// Deserialize
-		final long start = System.currentTimeMillis();
+		//final long start = System.currentTimeMillis();
 		OsProtoService.GetOssService.Stub myService = OsProtoService.GetOssService.newStub(channel);
 		RpcController controller = new SocketRpcController();
 		
@@ -99,9 +153,9 @@ public class ProtobufRpcClient {
 		myService.getOss(controller, build, new RpcCallback<OsProto.OsMessages>() {
 			public void run(OsProto.OsMessages osMessages) {
 
-				System.out.println("OS");
-				System.out.println("Time: " + (System.currentTimeMillis() - start));
-				System.out.println("size: " + osMessages.getOsmessageCount());
+				/*System.out.println("OS");
+				System.out.println("Time: " + (System.currentTimeMillis() - start));*/
+				osMessages.getOsmessageCount();
 			}
 		});
 		
